@@ -72,11 +72,11 @@ Different failure modes weight different dimensions:
 
 ### 3.1 Authoring modes and targets
 
-| Mode | Target share | Count (200-task run) |
+| Mode | Target share | Current accepted count |
 |------|-------------|---------------------|
 | Trace-derived | ~30% | 60 |
-| Programmatic (parameter sweeps) | ~30% | 60 |
-| Multi-LLM synthesis | ~25% | 50 |
+| Programmatic (parameter sweeps) | ~30% | 119 |
+| Multi-LLM synthesis | ~25% | 7 |
 | Hand-authored adversarial | ~15% | 30 |
 
 ### 3.2 Dimension distribution
@@ -93,18 +93,18 @@ Different failure modes weight different dimensions:
 
 ### 3.3 Partitioning protocol
 
-- **Training partition** (50%, ~100 tasks): input to Path B preference-pair construction
-- **Dev partition** (30%, ~60 tasks): public; used during dataset authoring iteration and prompt-engineering baselines
-- **Held-out partition** (20%, ~40 tasks): sealed; used only for final ablation scoring
+- **Training partition** (111 tasks): input to Path B preference-pair construction
+- **Dev partition** (68 tasks): public; used during dataset authoring iteration and prompt-engineering baselines
+- **Held-out partition** (37 tasks): sealed; used only for final ablation scoring
 
-Partitioning is stratified by dimension and difficulty to ensure each partition covers all dimensions.
+Partitioning is contamination-aware: hand-authored adversarial and accepted synthesis tasks form held-out, while programmatic and trace-derived template families are split into train/dev. This sacrifices perfectly matched source-mode proportions to keep template variants out of the sealed slice.
 
 ### 3.4 Contamination prevention
 
 Three checks before any task enters the held-out partition:
 
 1. **N-gram overlap**: < 8-gram overlap between held-out input fields and training/dev fields (script: `generation_scripts/contamination_check.py`)
-2. **Embedding similarity**: cosine similarity < 0.85 between held-out and training tasks using `sentence-transformers/all-MiniLM-L6-v2`
+2. **Embedding similarity**: cosine similarity < 0.85 between held-out and training/dev tasks using `sentence-transformers/all-MiniLM-L6-v2` when cached/available, with a documented TF-IDF fallback for offline runs
 3. **Time-shift verification**: any task referencing public data (Crunchbase, layoffs.fyi) uses signal windows documented in task metadata; no generic placeholders
 
 ### 3.5 LLM-as-a-judge pipeline

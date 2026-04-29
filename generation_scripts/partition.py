@@ -91,6 +91,40 @@ def stratified_split(tasks: list[dict], train_pct=0.5, dev_pct=0.3) -> tuple:
     return train, dev, held
 
 
+def contamination_aware_split(tasks: list[dict]) -> tuple:
+    """Split tasks while keeping the sealed slice away from template families.
+
+    Programmatic and trace-derived tasks intentionally create many nearby
+    variants. Those are useful for training and public dev, but they make a
+    poor sealed slice because lexical overlap is expected. For v0.1, the
+    sealed held-out is drawn from hand-authored adversarial and multi-LLM
+    synthesis tasks, which are the least templated and most diagnostic.
+    The remaining tasks are stratified into train/dev at roughly 62.5/37.5,
+    yielding an overall 50/30/20 split.
+    """
+    held_modes = {"hand-authored", "multi-llm-synthesis"}
+    held = [t for t in tasks if t.get("source_mode") in held_modes]
+    remainder = [t for t in tasks if t.get("source_mode") not in held_modes]
+
+    groups = defaultdict(list)
+    for t in remainder:
+        key = (t.get("dimension", "unknown"), t.get("difficulty", "medium"))
+        groups[key].append(t)
+
+    train, dev = [], []
+    for _, group in groups.items():
+        random.shuffle(group)
+        n_train = max(1, round(len(group) * 0.625))
+        train.extend(group[:n_train])
+        dev.extend(group[n_train:])
+
+    random.shuffle(train)
+    random.shuffle(dev)
+    random.shuffle(held)
+
+    return train, dev, held
+
+
 def assign_split_field(tasks: list[dict], split_name: str) -> list[dict]:
     return [{**t, "split": split_name} for t in tasks]
 
@@ -135,7 +169,7 @@ def run():
     tasks = deduplicate(tasks)
     print(f"  {len(tasks)} tasks after dedup")
 
-    train, dev, held = stratified_split(tasks)
+    train, dev, held = contamination_aware_split(tasks)
 
     train = assign_split_field(train, "train")
     dev   = assign_split_field(dev,   "dev")

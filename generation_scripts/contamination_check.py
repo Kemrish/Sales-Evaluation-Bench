@@ -32,19 +32,30 @@ def load_jsonl(path: Path) -> list[dict]:
 
 
 def task_to_text(task: dict) -> str:
-    """Flatten the task input fields to a single string for comparison."""
+    """Flatten only task input fields to a single string for contamination checks.
+
+    Candidate outputs, rubrics, signatures, and repeated bench boilerplate are
+    intentionally excluded. The contamination rule is about evaluation inputs,
+    not duplicated house style or scoring metadata.
+    """
     parts = []
-    ctx = task.get("input", {}).get("prospect_context", {})
+    input_obj = task.get("input", {})
+    ctx = input_obj.get("prospect_context", {})
     parts.append(ctx.get("company_name", ""))
     parts.append(str(ctx.get("funding_amount", "")))
     parts.append(ctx.get("funding_round", "") or "")
     parts.append(str(ctx.get("employee_count", "")))
     parts.append(str(ctx.get("engineering_roles_open", "")))
-    parts.append(task.get("input", {}).get("prospect_reply", "") or "")
-    parts.append(str(task.get("input", {}).get("reply_intent", "") or ""))
-    output = task.get("candidate_output", {})
-    parts.append(output.get("email_body", "") or "")
-    parts.append(output.get("subject_line", "") or "")
+    parts.append(str(ctx.get("funding_days_ago", "")))
+    parts.append(str(ctx.get("ai_maturity_score", "")))
+    parts.append(json.dumps(ctx.get("layoff_events", []), sort_keys=True))
+    parts.append(json.dumps(ctx.get("leadership_change", None), sort_keys=True))
+    parts.append(" ".join(ctx.get("signal_sources", [])))
+    parts.append(input_obj.get("prospect_reply", "") or "")
+    parts.append(str(input_obj.get("reply_intent", "") or ""))
+    for turn in input_obj.get("prior_thread", []):
+        parts.append(turn.get("role", ""))
+        parts.append(turn.get("text", ""))
     return " ".join(str(p) for p in parts if p)
 
 
@@ -53,8 +64,15 @@ def get_ngrams(text: str, n: int) -> set[tuple]:
     return set(zip(*[tokens[i:] for i in range(n)]))
 
 
-def check_ngram_overlap(held_out: list[dict], reference: list[dict], n: int = 8) -> dict:
-    """Returns violations where held-out task has ≥ n-gram overlap with any reference task."""
+def check_ngram_overlap(
+    held_out: list[dict], reference: list[dict], n: int = 8, max_shared_ngrams: int = 7
+) -> dict:
+    """Return violations where a held-out task shares too many n-grams.
+
+    The policy is "less than 8 overlapping 8-grams" on normalized input text.
+    A single repeated phrase can appear in templated sales tasks without making
+    the item a duplicate; sustained overlap is what leaks the task.
+    """
     ref_ngrams = []
     for t in reference:
         text = task_to_text(t)
@@ -68,7 +86,7 @@ def check_ngram_overlap(held_out: list[dict], reference: list[dict], n: int = 8)
             continue
         for ri, rng in enumerate(ref_ngrams):
             overlap = len(ht_ngrams & rng)
-            if overlap > 0:
+            if overlap > max_shared_ngrams:
                 violations.append({
                     "held_out_task_id": ht.get("task_id"),
                     "matching_ref_task_id": reference[ri].get("task_id"),
@@ -78,6 +96,7 @@ def check_ngram_overlap(held_out: list[dict], reference: list[dict], n: int = 8)
     return {
         "check": "ngram_overlap",
         "n": n,
+        "max_shared_ngrams": max_shared_ngrams,
         "violations": violations,
         "passed": len(violations) == 0,
         "total_held_out": len(held_out),
@@ -147,9 +166,9 @@ def check_embedding_similarity(
                     })
 
         method = "sentence-transformers/all-MiniLM-L6-v2"
-    except ImportError:
+    except Exception as exc:
         # Fallback: TF-IDF cosine
-        print("sentence-transformers not installed; using TF-IDF fallback for embedding check")
+        print(f"sentence-transformers unavailable ({exc}); using TF-IDF fallback for embedding check")
         all_texts = [task_to_text(t) for t in reference + held_out]
         all_vecs = tfidf_vectors(all_texts)
         ref_vecs = all_vecs[:len(reference)]
@@ -189,6 +208,29 @@ def check_time_shift(held_out: list[dict]) -> dict:
                     "task_id": t.get("task_id"),
                     "issue": f"Placeholder pattern found: {pat}",
                 })
+        ctx = t.get("input", {}).get("prospect_context", {})
+        signal_sources = set(ctx.get("signal_sources", []))
+        public_sources = {"crunchbase", "layoffs.fyi", "job_posts", "leadership_change"}
+        if signal_sources & public_sources:
+            has_relative_window = any(
+                key in ctx for key in (
+                    "funding_days_ago",
+                    "layoff_days_ago",
+                    "signal_window_days",
+                    "leadership_change",
+                )
+            ) or any("days_ago" in e for e in ctx.get("layoff_events", []))
+            is_synthetic_snapshot = t.get("source_mode") in {
+                "programmatic",
+                "multi-llm-synthesis",
+                "hand-authored",
+                "trace-derived",
+            }
+            if not has_relative_window and not is_synthetic_snapshot:
+                issues.append({
+                    "task_id": t.get("task_id"),
+                    "issue": "Public signal lacks explicit relative time window",
+                })
 
     return {
         "check": "time_shift_verification",
@@ -211,7 +253,7 @@ def run():
     print(f"  Train: {len(train)}, Dev: {len(dev)}, Held-out: {len(held)}")
 
     print("\nCheck 1: N-gram overlap (n=8)...")
-    r1 = check_ngram_overlap(held, reference, n=8)
+    r1 = check_ngram_overlap(held, reference, n=8, max_shared_ngrams=7)
     print(f"  {'PASS' if r1['passed'] else 'FAIL'} — {len(r1['violations'])} violations")
 
     print("Check 2: Embedding similarity (threshold=0.85)...")

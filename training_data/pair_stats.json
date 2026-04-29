@@ -1,14 +1,14 @@
 {
-  "total_wrong": 72,
-  "pairs_formed": 72,
-  "matched_correct": 72,
-  "constructed_chosen": 0,
+  "total_wrong": 62,
+  "pairs_formed": 62,
+  "matched_correct": 48,
+  "constructed_chosen": 14,
   "by_dimension": {
-    "tone_adherence": 13,
-    "icp_segment_classification": 5,
-    "signal_reliability": 5,
+    "signal_grounding": 23,
+    "dual_control_decision": 11,
     "bench_capacity_honesty": 14,
-    "signal_grounding": 20,
-    "dual_control_decision": 15
+    "tone_adherence": 9,
+    "signal_reliability": 3,
+    "icp_segment_classification": 2
   }
 }

@@ -21,8 +21,8 @@
     "properties": {
       "task_id": {
         "type": "string",
-        "pattern": "^TB-[A-Z]{2,4}-[0-9]{3}$",
-        "description": "Format: TB-{DIMENSION_CODE}-{SEQ}. E.g. TB-DC-001"
+        "pattern": "^TB-[A-Z]{2,4}(?:-[A-Z]{2})?-[0-9]{3}$",
+        "description": "Format: TB-{DIMENSION_CODE}-{SEQ} or TB-{DIMENSION_CODE}-{SOURCE_CODE}-{SEQ}. E.g. TB-DC-001 or TB-DC-PG-029"
       },
       "dimension": {
         "type": "string",

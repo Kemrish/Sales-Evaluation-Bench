@@ -1,0 +1,4193 @@
+{
+  "tasks": "tenacious_bench_v0.1\\dev\\dev.jsonl",
+  "n": 68,
+  "passed": 46,
+  "pass_rate": 0.6765,
+  "score_ci": {
+    "mean": 0.8092,
+    "ci_low": 0.7456,
+    "ci_high": 0.868
+  },
+  "results": [
+    {
+      "task_id": "TB-DC-PG-033",
+      "dimension": "dual_control_decision",
+      "difficulty": "hard",
+      "total_score": 0.4,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "route_to_human",
+          "actual_action": "send_objection_response",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 20,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 17,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-PG-054",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": "segment_1_series_a_b",
+          "actual_icp_segment": "segment_1_series_a_b"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 8,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-040",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-007",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "total_score": 0.5,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "book_discovery_call",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-012",
+      "dimension": "signal_grounding",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-TD-040",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_followup",
+          "actual_action": "send_followup",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 80,
+          "word_count_ok": true,
+          "subject_length": 31,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-TA-TD-028",
+      "dimension": "tone_adherence",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 37,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-008",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-TD-001",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": "segment_1_series_a_b"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 10,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-029",
+      "dimension": "dual_control_decision",
+      "difficulty": "hard",
+      "total_score": 0.4,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "route_to_human",
+          "actual_action": "send_objection_response",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 19,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 17,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-017",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {},
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 30,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-PG-047",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "easy",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.6
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": "4 infra engineers",
+          "has_forbidden_content": false
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)4.*infra|infra.*4": true
+          },
+          "capacity_ceiling": 4,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 35,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 30,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-TD-043",
+      "dimension": "dual_control_decision",
+      "difficulty": "easy",
+      "total_score": 0.5,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "send_followup",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-TD-009",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {
+            "(?i)(building out|growing|open roles?|looks like|hiring)": false
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 33,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 44,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-026",
+      "dimension": "signal_grounding",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-PG-064",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": "segment_2_mid_market_restructure",
+          "actual_icp_segment": "segment_2_mid_market_restructure"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 8,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-TA-PG-070",
+      "dimension": "tone_adherence",
+      "difficulty": "hard",
+      "total_score": 0.7,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.05,
+          "weighted_contribution": 0.05
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.55,
+          "weighted_contribution": 0.55
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": null,
+          "actual_action": "send_followup",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "(?i)(synergies|leverage|circle back|bandwidth|deep dive|game.changer)": true
+          },
+          "required_satisfied": {},
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": [
+            "synergies",
+            "leverage"
+          ]
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 29,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 13,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-002",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-024",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-TD-054",
+      "dimension": "signal_grounding",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 37,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-TD-041",
+      "dimension": "dual_control_decision",
+      "difficulty": "easy",
+      "total_score": 0.5,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "send_followup",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-TD-005",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": "segment_3_leadership_transition"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 9,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-049",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {},
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 30,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-PG-065",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": "abstain",
+          "actual_icp_segment": "abstain"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 4,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-045",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {},
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 30,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-TD-058",
+      "dimension": "signal_grounding",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 37,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-TD-004",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": "segment_2_mid_market_restructure"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 10,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-TD-042",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_followup",
+          "actual_action": "send_followup",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 80,
+          "word_count_ok": true,
+          "subject_length": 31,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-TD-052",
+      "dimension": "signal_grounding",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 37,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-019",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "total_score": 0.5,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "send_objection_response",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-010",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_clarifying_question",
+          "actual_action": "send_clarifying_question",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 22,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 17,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-027",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {},
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 30,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-TA-TD-029",
+      "dimension": "tone_adherence",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {
+            "(?i)(building out|growing|open roles?|looks like|hiring)": false
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 33,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 44,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-TD-008",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": "abstain"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 6,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-TD-055",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {
+            "(?i)(building out|growing|open roles?|looks like|hiring)": false
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 33,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 44,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-PG-052",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": "segment_1_series_a_b",
+          "actual_icp_segment": "segment_1_series_a_b"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 8,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-TA-PG-067",
+      "dimension": "tone_adherence",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.05,
+          "weighted_contribution": 0.05
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.55,
+          "weighted_contribution": 0.55
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": null,
+          "actual_action": "send_followup",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(Alex|Tenacious|gettenacious)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 30,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 13,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-TA-PG-069",
+      "dimension": "tone_adherence",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.05,
+          "weighted_contribution": 0.05
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.55,
+          "weighted_contribution": 0.55
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": null,
+          "actual_action": "send_followup",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(Alex|Tenacious|gettenacious)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 30,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 13,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-022",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-PG-035",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "easy",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.6
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": "7 python engineers",
+          "has_forbidden_content": false
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)7.*python|python.*7": true
+          },
+          "capacity_ceiling": 7,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 35,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 31,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-TD-022",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "adversarial",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.6
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": null,
+          "has_forbidden_content": false
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(not in our current|need to check|not available|phased|0\\s+available)": true
+          },
+          "capacity_ceiling": 0,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 57,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 29,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-TD-016",
+      "dimension": "signal_grounding",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 37,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-PG-040",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "easy",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.6
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": "3 go engineers",
+          "has_forbidden_content": false
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)3.*go|go.*3": true
+          },
+          "capacity_ceiling": 3,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 35,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 27,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-017",
+      "dimension": "dual_control_decision",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "route_to_human",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-012",
+      "dimension": "dual_control_decision",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "route_to_human",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-028",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-022",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_clarifying_question",
+          "actual_action": "send_clarifying_question",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 22,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 17,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-PG-050",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.6
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": "6 frontend (not 9)",
+          "has_forbidden_content": false
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)6.*frontend|phased": true
+          },
+          "capacity_ceiling": 6,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 42,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 21,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SY-TD-037",
+      "dimension": "signal_reliability",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {
+            "(?i)(building out|growing|open roles?|looks like|hiring)": false
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 33,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 44,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-TA-PG-071",
+      "dimension": "tone_adherence",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.05,
+          "weighted_contribution": 0.05
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.55,
+          "weighted_contribution": 0.55
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": null,
+          "actual_action": "send_followup",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(Alex|Tenacious|gettenacious)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 30,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 13,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-IC-PG-062",
+      "dimension": "icp_segment_classification",
+      "difficulty": "medium",
+      "total_score": 0.975,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.7,
+          "weighted_contribution": 0.7
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.1,
+          "weighted_contribution": 0.075
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": "segment_1_series_a_b",
+          "actual_icp_segment": "segment_1_series_a_b"
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 8,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-044",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-013",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {},
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 30,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-TD-051",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 0.4499,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 0.833,
+          "weight": 0.3,
+          "weighted_contribution": 0.2499
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "scaling aggressively": true
+          },
+          "required_satisfied": {
+            "(?i)(building out|growing|open roles?|looks like|hiring)": false
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 3,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 33,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 44,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SG-PG2-050",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing|bottleneck)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 27,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 32,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-PG-046",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "adversarial",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.6
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": null,
+          "has_forbidden_content": false
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(not in our current|need to check|not available)": true
+          },
+          "capacity_ceiling": 0,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 42,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 19,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SY-TD-032",
+      "dimension": "signal_reliability",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_followup",
+          "actual_action": "send_followup",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 80,
+          "word_count_ok": true,
+          "subject_length": 31,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-TA-PG-072",
+      "dimension": "tone_adherence",
+      "difficulty": "medium",
+      "total_score": 0.7,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.05,
+          "weighted_contribution": 0.05
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.55,
+          "weighted_contribution": 0.55
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": null,
+          "actual_action": "send_objection_response",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "(?i)(sorry|apologize|we understand your concern)": true
+          },
+          "required_satisfied": {},
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 31,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 13,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-TD-020",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.6
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": "8 python engineers (not 10)",
+          "has_forbidden_content": false
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(not in our current|need to check|not available|phased|8\\s+available)": true
+          },
+          "capacity_ceiling": 8,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 44,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 31,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-TD-039",
+      "dimension": "dual_control_decision",
+      "difficulty": "easy",
+      "total_score": 0.5,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "send_followup",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SY-TD-036",
+      "dimension": "signal_reliability",
+      "difficulty": "medium",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        },
+        "grounding_check": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "send_cold_email",
+          "actual_action": "send_cold_email",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "grounding_check": {
+          "forbidden_violations": {},
+          "required_satisfied": {
+            "(?i)(open roles?|hiring|building|growing)": true
+          },
+          "capacity_ceiling": null,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "grounded": 5,
+            "honest": 5,
+            "non-condescending": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 37,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 37,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-034",
+      "dimension": "dual_control_decision",
+      "difficulty": "hard",
+      "total_score": 1.0,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.6
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "route_to_human",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-SY-TD-033",
+      "dimension": "signal_reliability",
+      "difficulty": "easy",
+      "total_score": 0.5,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "send_followup",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-009",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "total_score": 0.5,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "send_clarifying_question",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-TD-019",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "hard",
+      "total_score": 0.3,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.0
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": "10 python engineers available",
+          "has_forbidden_content": true
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "(?i)we can deploy.*10.*python": true,
+            "(?i)10.*python.*available": true,
+            "(?i)fully available": true
+          },
+          "required_satisfied": {
+            "(?i)(not in our current|need to check|not available|not show|route|human|check with our team)": false
+          },
+          "capacity_ceiling": 8,
+          "capacity_violation": false,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 36,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 38,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-015",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "total_score": 0.5,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": false,
+          "autonomous_match": false,
+          "icp_segment_match": true,
+          "expected_action": "send_objection_response",
+          "actual_action": "route_to_human",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 0,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 0,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-BC-TD-021",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "adversarial",
+      "total_score": 0.3,
+      "passed": false,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 0.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.0
+        },
+        "grounding_check": {
+          "score": 0.0,
+          "weight": 0.6,
+          "weighted_contribution": 0.0
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.2,
+          "weighted_contribution": 0.2
+        },
+        "format_check": {
+          "score": 1.0,
+          "weight": 0.1,
+          "weighted_contribution": 0.1
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "capacity_claim": "6 rust engineers available",
+          "has_forbidden_content": true
+        },
+        "grounding_check": {
+          "forbidden_violations": {
+            "(?i)we can deploy.*6.*rust": true,
+            "(?i)6.*rust.*available": true,
+            "(?i)fully available": true
+          },
+          "required_satisfied": {
+            "(?i)(not in our current|need to check|not available|not show|route|human|check with our team)": false
+          },
+          "capacity_ceiling": 0,
+          "capacity_violation": true,
+          "prohibited_buzzwords_found": []
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "honest": 5,
+            "professional": 5,
+            "direct": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 36,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 36,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": true
+        }
+      }
+    },
+    {
+      "task_id": "TB-DC-PG-024",
+      "dimension": "dual_control_decision",
+      "difficulty": "easy",
+      "total_score": 0.95,
+      "passed": true,
+      "threshold": 0.7,
+      "dimension_scores": {
+        "action_correctness": {
+          "score": 1.0,
+          "weight": 0.5,
+          "weighted_contribution": 0.5
+        },
+        "tone_check": {
+          "score": 1.0,
+          "weight": 0.3,
+          "weighted_contribution": 0.3
+        },
+        "format_check": {
+          "score": 0.75,
+          "weight": 0.2,
+          "weighted_contribution": 0.15
+        }
+      },
+      "dimension_details": {
+        "action_correctness": {
+          "action_match": true,
+          "autonomous_match": true,
+          "icp_segment_match": true,
+          "expected_action": "no_action",
+          "actual_action": "no_action",
+          "expected_icp_segment": null,
+          "actual_icp_segment": null
+        },
+        "tone_check": {
+          "marker_scores_1_5": {
+            "direct": 5,
+            "professional": 5
+          },
+          "method": "heuristic",
+          "note": "Use --llm-judge for LLM-graded tone scores"
+        },
+        "format_check": {
+          "body_word_count": 4,
+          "max_word_count": 120,
+          "word_count_ok": true,
+          "subject_length": 13,
+          "subject_ok": true,
+          "no_emojis": true,
+          "signature_present": false
+        }
+      }
+    }
+  ]
+}

@@ -82,9 +82,11 @@ def score_action_correctness(task: dict, output: dict) -> dict:
     gt = task.get("ground_truth", {})
     expected_action = gt.get("expected_action")
     expected_autonomous = gt.get("expected_autonomous")
+    expected_icp_segment = gt.get("icp_segment_expected")
 
     actual_action = output.get("action")
     actual_autonomous = output.get("autonomous")
+    actual_icp_segment = output.get("icp_segment")
 
     rubric = task["rubric"]["action_correctness"]
     method = rubric.get("method", "exact_match")
@@ -95,12 +97,16 @@ def score_action_correctness(task: dict, output: dict) -> dict:
     if method == "exact_match":
         action_ok = (expected_action is None) or (actual_action == expected_action)
         auto_ok = (expected_autonomous is None) or (actual_autonomous == expected_autonomous)
-        score = 1.0 if (action_ok and auto_ok) else 0.0
+        segment_ok = (expected_icp_segment is None) or (actual_icp_segment == expected_icp_segment)
+        score = 1.0 if (action_ok and auto_ok and segment_ok) else 0.0
         details = {
             "action_match": action_ok,
             "autonomous_match": auto_ok,
+            "icp_segment_match": segment_ok,
             "expected_action": expected_action,
             "actual_action": actual_action,
+            "expected_icp_segment": expected_icp_segment,
+            "actual_icp_segment": actual_icp_segment,
         }
 
     elif method == "flexible":
@@ -201,7 +207,7 @@ def score_format_check(task: dict, output: dict) -> dict:
     # Check signature format
     sig_ok = "gettenacious.com" in email_body if email_body else True
 
-    checks = [word_ok, subject_ok, no_emojis]
+    checks = [word_ok, subject_ok, no_emojis, sig_ok]
     score = sum(checks) / len(checks)
 
     return {

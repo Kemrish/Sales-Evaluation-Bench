@@ -1,0 +1,12 @@
+accelerate
+datasets
+httpx
+jsonschema
+numpy
+peft
+python-dotenv
+scikit-learn
+sentence-transformers
+torch
+transformers
+trl

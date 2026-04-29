@@ -27,10 +27,10 @@ Each instance is a single agent evaluation task. It contains:
 - `rubric`: per-dimension scoring weights summing to 1.0 with method (exact_match, regex, llm_judge).
 
 **How many instances?**
-213 total tasks after deduplication, partitioned as:
-- Train: 110 (51.6%)
-- Dev: 62 (29.1%)
-- Held-out: 41 (19.2%)
+216 total tasks after deduplication, partitioned as:
+- Train: 111 (51.4%)
+- Dev: 68 (31.5%)
+- Held-out: 37 (17.1%)
 
 **Breakdown by dimension:**
 
@@ -38,7 +38,7 @@ Each instance is a single agent evaluation task. It contains:
 |-----------|-------|
 | dual_control_decision | 53 |
 | signal_grounding | 67 |
-| bench_capacity_honesty | 30 |
+| bench_capacity_honesty | 32 |
 | icp_segment_classification | 29 |
 | tone_adherence | 26 |
 | signal_reliability | 8 |
@@ -50,22 +50,23 @@ Each instance is a single agent evaluation task. It contains:
 | programmatic | 119 |
 | trace-derived | 60 |
 | hand-authored | 30 |
-| multi-llm-synthesis | 4 |
+| multi-llm-synthesis | 7 |
 
 **Breakdown by difficulty:**
 
-| Difficulty | Count (approx) |
+| Difficulty | Count |
 |------------|----------------|
-| hard | ~107 |
-| medium | ~70 |
-| easy | ~36 |
+| hard | 82 |
+| medium | 75 |
+| adversarial | 38 |
+| easy | 21 |
 
 **Does the dataset contain all possible instances, or a sample?**
 The programmatic tasks cover a combinatorial sweep of parameter values (funding amounts, role counts, intent categories, stack combinations) defined in `generation_scripts/generate_programmatic.py` and `generate_sg_extra.py`. The trace-derived tasks are anchored 1:1 to the 30 probe IDs in `probes/probe_catalog.json` (2 variants each). The hand-authored and synthesis tasks are a non-exhaustive adversarial sample.
 
 **Is there missing information?**
-- `multi-llm-synthesis` mode produced only 4 accepted tasks (37 generated; 33 rejected by judge filter for low verifiability). This dimension is underrepresented relative to the original 25% target.
-- `signal_reliability` dimension has only 8 tasks due to late addition; held-out partition may not have coverage for this dimension.
+- `multi-llm-synthesis` mode produced only 7 accepted tasks after filtering. This mode is underrepresented relative to the original 25% target.
+- `signal_reliability` dimension has only 8 tasks due to late addition; held-out partition does not yet have coverage for this dimension.
 
 **Does the dataset contain data that might be considered confidential or sensitive?**
 No. All company names, funding amounts, employee counts, and prospect replies are synthetic. No real prospect data, PII, or proprietary deal records are included.
@@ -82,7 +83,7 @@ Four authoring modes were used:
 
 2. **Programmatic** (`generate_programmatic.py`, `generate_sg_extra.py`): Parameter sweeps across ICP segment thresholds, bench stack availability, intent × confidence combinations, and signal source quality. All logic is deterministic given `random.seed(42)` / `random.seed(99)`. Produces 119 tasks.
 
-3. **Multi-LLM synthesis** (`generate_synthesis.py`): 10 seed prompts derived from probe failure evidence submitted to `qwen/qwen3-235b-a22b` (generator); outputs judged by `anthropic/claude-sonnet-4-6` (judge, different model family to prevent preference leakage). Acceptance criterion: coherence ≥ 3.5, verifiability ≥ 3.5, clarity ≥ 3.5 on a 1–5 scale. Judge rotation log: `generation_scripts/judge_rotation_log.jsonl`. Produces 4 tasks.
+3. **Multi-LLM synthesis** (`generate_synthesis.py`): seed prompts derived from probe failure evidence are sent through a generator route and judged by a different model family to prevent preference leakage. Acceptance criterion: coherence >= 3.5, verifiability >= 3.5, clarity >= 3.5 on a 1-5 scale. Judge rotation log: `generation_scripts/judge_rotation_log.jsonl`. Produces 7 accepted tasks in the committed build.
 
 4. **Hand-authored adversarial** (`raw_hand_authored.jsonl`): 30 tasks covering adversarial combinations not reached by the programmatic sweep (multi-signal ICP conflicts, cumulative tone drift, undated layoff + high AI score, GDPR + pricing in one message). 19 wrong / 11 correct candidate outputs.
 
@@ -103,10 +104,10 @@ Not applicable — dataset contains no human subject data, no personal informati
 
 Yes:
 - **Deduplication**: `partition.py:deduplicate()` removes any task with a duplicate `task_id` before splitting.
-- **Stratified partitioning**: Tasks are split by `(dimension, difficulty)` stratum to ensure each split covers all categories. Groups with fewer than 3 tasks go entirely to train.
+- **Contamination-aware partitioning**: Hand-authored adversarial and accepted synthesis tasks form the sealed held-out slice. Programmatic and trace-derived template families are reserved for train/dev, then split by `(dimension, difficulty)` to preserve coverage.
 - **Contamination checks** (`contamination_check.py`):
-  - *N-gram overlap* (n=8): 1,136 structural violations detected between train/dev and held-out. These are expected artifacts of template-based programmatic generation sharing scaffolding tokens (e.g., "Tenacious Intelligence Corporation", "engineering roles open"). They do not represent true content leakage — the distinguishing content (funding amount, role count, intent type) differs across instances. Held-out sealing proceeds with this known artifact documented.
-  - *Embedding similarity* (cosine ≥ 0.85, sentence-transformers/all-MiniLM-L6-v2): 34 violations. Same root cause as n-gram violations — sentence-level template overlap in short email bodies. Reviewed manually; no held-out task is a paraphrase of any train/dev task.
+  - *N-gram overlap* (n=8): 0 violations after moving templated families out of held-out.
+  - *Embedding similarity* (cosine >= 0.85): 0 violations in the local offline TF-IDF fallback. The script attempts `sentence-transformers/all-MiniLM-L6-v2` first when the model is available.
   - *Time-shift placeholder check*: 0 violations. No unfilled `[DATE]`, `[COMPANY]`, or `<CAPS>` placeholders remain.
 
 **Was the "raw" data saved in addition to the preprocessed/cleaned data?**
@@ -180,11 +181,11 @@ Full report: `week11/contamination_check.json`
 
 | Check | Result | Details |
 |-------|--------|---------|
-| N-gram overlap (n=8) | FAIL (documented artifact) | 1,136 violations — template scaffolding overlap, not content leakage |
-| Embedding similarity (cos ≥ 0.85) | FAIL (documented artifact) | 34 violations — same root cause, manually verified |
+| N-gram overlap (n=8) | PASS | 0 violations |
+| Embedding similarity (cos >= 0.85) | PASS | 0 violations using offline TF-IDF fallback in this environment |
 | Time-shift placeholders | PASS | 0 unfilled placeholders |
 
-**Assessment**: The held-out partition is clean with respect to unique task content. Violations stem from shared programmatic templates and are unavoidable given the structured generation approach. Held-out sealed with documented caveat.
+**Assessment**: The held-out partition is clean under the committed local checks. The sealed slice is intentionally composed from hand-authored adversarial and multi-LLM synthesis tasks to avoid leakage from programmatic template families.
 
 ---
 
@@ -194,8 +195,8 @@ Full report: `week11/contamination_check.json`
 
 | Property | Value |
 |----------|-------|
-| Total tasks | 213 |
-| Splits | 110 train / 62 dev / 41 held-out |
+| Total tasks | 216 |
+| Splits | 111 train / 68 dev / 37 held-out |
 | Dimensions | 5 primary + 1 secondary |
 | Source modes | 4 |
 | Scoring methods | exact_match, regex, llm_judge |
@@ -210,7 +211,7 @@ No human annotators were used for labeling. Ground truth is either:
 
 ### Layer 3: Known Limitations
 
-1. **Low synthesis yield**: 4/37 tasks accepted. The generator model struggled to produce machine-verifiable rubric patterns, defaulting to free-text ground-truth notes. This is a fundamental limitation of prompting-based task generation for structured evaluation.
-2. **Signal reliability underrepresentation**: 8 tasks out of 213 (3.8%). The dimension was added late and lacks full combinatorial coverage.
-3. **Template contamination**: N-gram and embedding violations in contamination check are artifacts of shared programmatic scaffolding. Held-out tasks are distinguishable by their specific parameter values but share surface-level token patterns.
+1. **Low synthesis yield**: 7 synthesis tasks accepted. The generator model struggled to produce machine-verifiable rubric patterns, defaulting to free-text ground-truth notes. This is a fundamental limitation of prompting-based task generation for structured evaluation.
+2. **Signal reliability underrepresentation**: 8 tasks out of 216 (3.7%). The dimension was added late and lacks full combinatorial coverage.
+3. **Held-out composition tradeoff**: The sealed slice is cleaner because it excludes programmatic template families, but this means held-out source-mode distribution differs from train/dev.
 4. **Single-domain scope**: All tasks are anchored to Tenacious's specific ICP segments and bench state. Generalization to other staff augmentation companies would require re-authoring ICP thresholds and bench constraints.

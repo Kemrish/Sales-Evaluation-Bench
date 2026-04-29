@@ -1,0 +1,68 @@
+{
+  "version": "0.1",
+  "claims": [
+    {
+      "claim_id": "dataset_total_tasks",
+      "claim": "Tenacious-Bench v0.1 contains 216 tasks.",
+      "value": 216,
+      "source": "generation_scripts/partition.py output",
+      "artifacts": [
+        "tenacious_bench_v0.1/train/train.jsonl",
+        "tenacious_bench_v0.1/dev/dev.jsonl",
+        "tenacious_bench_v0.1/held_out/held_out.jsonl"
+      ]
+    },
+    {
+      "claim_id": "partition_train_count",
+      "claim": "The train partition contains 111 tasks.",
+      "value": 111,
+      "source": "generation_scripts/partition.py output",
+      "artifacts": ["tenacious_bench_v0.1/train/train.jsonl"]
+    },
+    {
+      "claim_id": "partition_dev_count",
+      "claim": "The dev partition contains 68 tasks.",
+      "value": 68,
+      "source": "generation_scripts/partition.py output",
+      "artifacts": ["tenacious_bench_v0.1/dev/dev.jsonl"]
+    },
+    {
+      "claim_id": "partition_held_out_count",
+      "claim": "The held-out partition contains 37 tasks.",
+      "value": 37,
+      "source": "generation_scripts/partition.py output",
+      "artifacts": ["tenacious_bench_v0.1/held_out/held_out.jsonl"]
+    },
+    {
+      "claim_id": "contamination_passed",
+      "claim": "The held-out contamination report passes n-gram, embedding-similarity fallback, and time-shift checks.",
+      "value": true,
+      "source": "contamination_check.json",
+      "artifacts": ["contamination_check.json"]
+    },
+    {
+      "claim_id": "preference_pair_count",
+      "claim": "Path B training data contains 62 preference pairs.",
+      "value": 62,
+      "source": "training_data/pair_stats.json",
+      "artifacts": [
+        "training_data/preference_pairs.jsonl",
+        "training_data/pair_stats.json"
+      ]
+    },
+    {
+      "claim_id": "candidate_baseline_held_out_pass_rate",
+      "claim": "The embedded candidate-output baseline passes 62.16% of held-out tasks.",
+      "value": 0.6216,
+      "source": "ablations/baseline_candidate_held_out.json",
+      "artifacts": ["ablations/baseline_candidate_held_out.json"]
+    },
+    {
+      "claim_id": "candidate_baseline_dev_pass_rate",
+      "claim": "The embedded candidate-output baseline passes 67.65% of dev tasks.",
+      "value": 0.6765,
+      "source": "ablations/baseline_candidate_dev.json",
+      "artifacts": ["ablations/baseline_candidate_dev.json"]
+    }
+  ]
+}
