@@ -10,7 +10,7 @@
 Tenacious-Bench v0.1 was created to fill a critical evaluation gap for the Tenacious Intelligence Corporation sales agent. The τ²-Bench retail dataset (cancel-order, exchange-items, track-shipment tasks) shares no domain vocabulary, decision logic, or grounding constraints with Tenacious's B2B engineering staff augmentation workflow. Eight specific capability gaps were identified in audit_memo.md, anchored to 30 probe IDs from the Week 10 adversarial test suite.
 
 **What tasks does it support?**
-The dataset supports evaluation of a B2B sales agent on five dimensions: dual-control decision-making (when to act autonomously vs. escalate), signal grounding (matching outreach claims to evidence quality), bench capacity honesty (never committing beyond available engineers), ICP segment classification (four segments with numerical thresholds), and tone adherence (five markers: direct, grounded, honest, professional, non-condescending).
+The dataset supports evaluation of a B2B sales agent on six dimensions: dual-control decision-making (when to act autonomously vs. escalate), signal grounding (matching outreach claims to evidence quality), bench capacity honesty (never committing beyond available engineers), ICP segment classification (four segments with numerical thresholds), tone adherence (five markers: direct, grounded, honest, professional, non-condescending), and signal reliability (hedging when signal provenance is weak or single-source). A seventh dimension, reply_classification, was originally specified in the schema but removed from v0.1 as no tasks were authored for it; deferred to v0.2.
 
 **Who funded / authorized creation?**
 Internal research artifact for Tenacious Consulting Week 11 challenge. No external funding. Dataset created by Kemeriya using a combination of trace-derived authoring, programmatic generation, multi-LLM synthesis, and hand-authored adversarial cases.
@@ -197,7 +197,7 @@ Full report: `week11/contamination_check.json`
 |----------|-------|
 | Total tasks | 216 |
 | Splits | 111 train / 68 dev / 37 held-out |
-| Dimensions | 5 primary + 1 secondary |
+| Dimensions | 5 primary + 1 secondary (6 total in v0.1; reply_classification deferred to v0.2) |
 | Source modes | 4 |
 | Scoring methods | exact_match, regex, llm_judge |
 | Pass threshold | ≥ 0.70 weighted score |

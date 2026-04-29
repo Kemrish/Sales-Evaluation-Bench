@@ -72,12 +72,12 @@ Different failure modes weight different dimensions:
 
 ### 3.1 Authoring modes and targets
 
-| Mode | Target share | Current accepted count |
-|------|-------------|---------------------|
-| Trace-derived | ~30% | 60 |
-| Programmatic (parameter sweeps) | ~30% | 119 |
-| Multi-LLM synthesis | ~25% | 7 |
-| Hand-authored adversarial | ~15% | 30 |
+| Mode | Target share | Current accepted count | Actual share | Notes |
+|------|-------------|---------------------|--------------|-------|
+| Trace-derived | ~30% | 60 | 27.8% | On target |
+| Programmatic (parameter sweeps) | ~30% | 119 | 55.1% | Over target; absorbed synthesis shortfall |
+| Multi-LLM synthesis | ~25% | 7 | 3.2% | Severely under target; generator could not produce machine-verifiable regex rubric patterns — see memo_03 |
+| Hand-authored adversarial | ~15% | 30 | 13.9% | On target |
 
 ### 3.2 Dimension distribution
 

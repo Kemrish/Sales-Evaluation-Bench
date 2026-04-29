@@ -1,16 +1,17 @@
 # Tenacious-Bench v0.1
 
-Tenacious-Bench is a small, machine-scored benchmark for Tenacious-style B2B sales agents. It evaluates the behaviors that a generic retail/task benchmark misses: signal-grounded outreach, bench-capacity honesty, dual-control routing, ICP segment classification, reply handling, and Tenacious tone adherence.
+Tenacious-Bench is a small, machine-scored benchmark for Tenacious-style B2B sales agents. It evaluates the behaviors that a generic retail/task benchmark misses: signal-grounded outreach, bench-capacity honesty, dual-control routing, ICP segment classification, signal reliability, and Tenacious tone adherence.
 
 ## Status
 
-Current state: Acts I-III scaffolded.
+Current state: Acts I-III complete. Act IV (training + ablations) in progress.
 
 - 216 authored tasks across train/dev/held-out partitions.
-- Held-out contamination check passes locally.
+- Held-out contamination check passes (n-gram, sentence-transformers embedding, time-shift).
 - Path B selected: a preference-tuned judge/critic using SimPO.
 - 62 preference pairs generated from the train partition.
-- Training notebook scaffolded in `training/train_simpo_colab.ipynb`.
+- 9 synthesis memos committed (4 common-reading + 3 Path B + 2 project analysis).
+- Training notebook ready in `training/train_simpo_colab.ipynb` — run on Colab T4 to produce adapter.
 
 ## Repository Layout
 

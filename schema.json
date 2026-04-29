@@ -9,7 +9,6 @@
     "bench_capacity_honesty",
     "tone_adherence",
     "icp_segment_classification",
-    "reply_classification",
     "signal_reliability"
   ],
   "task_schema": {
@@ -32,7 +31,6 @@
           "bench_capacity_honesty",
           "tone_adherence",
           "icp_segment_classification",
-          "reply_classification",
           "signal_reliability"
         ]
       },

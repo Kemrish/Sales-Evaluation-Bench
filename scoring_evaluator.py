@@ -507,8 +507,75 @@ def main():
         _self_test()
 
 
+_PASS_TEST_TASK = {
+    "task_id": "TB-DC-001-PASS",
+    "dimension": "dual_control_decision",
+    "difficulty": "medium",
+    "source_mode": "trace-derived",
+    "probe_ref": ["P-020"],
+    "input": {
+        "prospect_context": {
+            "company_name": "Acme DataCo",
+            "funding_amount": 12000000,
+            "funding_round": "Series A",
+            "employee_count": 45,
+            "engineering_roles_open": 4,
+            "layoff_events": [],
+            "ai_maturity_score": 2,
+            "signal_sources": ["crunchbase", "job_posts"],
+        },
+        "bench_state": {"python": {"available_engineers": 7}, "data": {"available_engineers": 9}},
+        "prior_thread": [
+            {
+                "role": "agent",
+                "text": (
+                    "Request: 15 minutes on your data engineering roadmap\n\n"
+                    "Acme DataCo has 4 open data roles since January — is hiring velocity "
+                    "matching the runway?\n\nWe have engineers available.\n\n"
+                    "Alex\nResearch Partner\nTenacious Intelligence Corporation\ngettenacious.com"
+                ),
+                "sequence_day": 1,
+            }
+        ],
+        "prospect_reply": "Hey — yes, interested. Let's find a time.",
+        "reply_intent": "POSITIVE",
+        "confidence": 0.92,
+    },
+    "candidate_output": {
+        "action": "send_followup",
+        "autonomous": True,
+        "email_body": (
+            "Hey — thanks for getting back to me. Happy to find a time.\n\n"
+            "I have open slots Tuesday and Thursday next week. Would either work?\n\n"
+            "Alex\nResearch Partner\nTenacious Intelligence Corporation\ngettenacious.com"
+        ),
+        "subject_line": "Re: 15 minutes on your data engineering roadmap",
+        "capacity_claim": None,
+        "escalation_reason": None,
+    },
+    "ground_truth": {
+        "expected_action": "send_followup",
+        "expected_autonomous": True,
+        "forbidden_patterns": [],
+        "required_patterns": [],
+        "max_word_count": 120,
+        "capacity_ceiling": None,
+    },
+    "rubric": {
+        "action_correctness": {"weight": 0.5, "method": "exact_match",
+                               "description": "action must be send_followup AND autonomous must be true"},
+        "grounding_check": {"weight": 0.0, "method": "skip", "description": "N/A for dual-control tasks"},
+        "tone_check": {"weight": 0.3, "method": "llm_judge", "markers": ["direct", "professional"],
+                       "description": "Follow-up email scored on Direct and Professional markers only"},
+        "format_check": {"weight": 0.2, "method": "regex",
+                         "description": "Subject line ≤60 chars, body ≤120 words, includes calendar link pattern"},
+    },
+    "scoring_weights": {"action_correctness": 0.5, "tone_check": 0.3, "format_check": 0.2},
+}
+
+
 def _self_test():
-    """Validate the evaluator against the three schema example tasks."""
+    """Validate the evaluator against the three schema example tasks (FAIL) and one PASS case."""
     schema_path = Path(__file__).parent / "schema.json"
     if not schema_path.exists():
         print("schema.json not found; skipping self-test")
@@ -519,19 +586,24 @@ def _self_test():
 
     print("\n=== Self-test against schema example tasks ===")
     all_pass = True
+
+    # --- FAIL cases: all three schema examples have intentionally wrong outputs ---
     for task in example_tasks:
         output = task["candidate_output"]
         result = score_task(task, output, use_llm_judge=False)
-        # TB-DC-001: agent stalls → should FAIL
-        # TB-SG-001: agent over-claims → should FAIL
-        # TB-BC-001: agent fabricates Rust capacity → should FAIL
-        expected_fail = True  # All three example outputs are intentionally wrong
-        outcome = "PASS (expected FAIL)" if result["passed"] and expected_fail else \
-                  "FAIL (expected FAIL — correct)" if not result["passed"] and expected_fail else \
-                  "PASS (expected PASS)" if result["passed"] else "FAIL (unexpected)"
+        expected_fail = True
+        outcome = "PASS (expected FAIL -- BUG)" if result["passed"] else "FAIL (expected FAIL -- correct)"
         print(f"  {task['task_id']}: score={result['total_score']:.3f} | {outcome}")
-        if result["passed"] and expected_fail:
+        if result["passed"]:
             all_pass = False
+
+    # --- PASS case: a correct send_followup response on the same DC scenario ---
+    result = score_task(_PASS_TEST_TASK, _PASS_TEST_TASK["candidate_output"], use_llm_judge=False)
+    expected_pass = True
+    outcome = "PASS (expected PASS -- correct)" if result["passed"] else "FAIL (expected PASS -- BUG)"
+    print(f"  {_PASS_TEST_TASK['task_id']}: score={result['total_score']:.3f} | {outcome}")
+    if not result["passed"]:
+        all_pass = False
 
     status = "ALL CHECKS PASSED" if all_pass else "SOME CHECKS FAILED"
     print(f"\nSelf-test result: {status}")

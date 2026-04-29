@@ -35,7 +35,7 @@
     },
     {
       "claim_id": "contamination_passed",
-      "claim": "The held-out contamination report passes n-gram, embedding-similarity fallback, and time-shift checks.",
+      "claim": "The held-out contamination report passes n-gram, embedding-similarity (sentence-transformers/all-MiniLM-L6-v2), and time-shift checks.",
       "value": true,
       "source": "contamination_check.json",
       "artifacts": ["contamination_check.json"]

@@ -16,7 +16,7 @@
     {
       "check": "embedding_similarity",
       "threshold": 0.85,
-      "method": "tfidf-cosine-fallback",
+      "method": "sentence-transformers/all-MiniLM-L6-v2",
       "violations": [],
       "passed": true
     },
