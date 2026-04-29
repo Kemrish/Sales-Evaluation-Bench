@@ -63,6 +63,43 @@
       "value": 0.6765,
       "source": "ablations/baseline_candidate_dev.json",
       "artifacts": ["ablations/baseline_candidate_dev.json"]
+    },
+    {
+      "claim_id": "week10_baseline_held_out_pass_rate",
+      "claim": "The Week 10 generation baseline scores 74.59% average weighted score on the held-out partition.",
+      "value": 0.7459,
+      "source": "ablations/ablation_results.json",
+      "artifacts": ["ablations/ablation_results.json"]
+    },
+    {
+      "claim_id": "post_training_held_out_pass_rate",
+      "claim": "The SimPO-trained adapter scores 49.66% average weighted score on the held-out partition.",
+      "value": 0.4966,
+      "source": "ablations/ablation_results.json",
+      "artifacts": ["ablations/ablation_results.json"]
+    },
+    {
+      "claim_id": "delta_a_lift",
+      "claim": "Delta A: trained adapter vs Week 10 baseline on held-out = -24.92 percentage points (negative result; training degraded performance).",
+      "value": -24.92,
+      "source": "ablations/ablation_results.json",
+      "artifacts": ["ablations/ablation_results.json"],
+      "notes": "p-value=1.0, 95% CI [-33.98, -15.60]. Not significant in positive direction. Negative result is honest and reported as-is."
+    },
+    {
+      "claim_id": "delta_b_lift",
+      "claim": "Delta B: trained adapter vs prompt-engineered base model on held-out = -2.56 percentage points (negative result).",
+      "value": -2.56,
+      "source": "ablations/ablation_results.json",
+      "artifacts": ["ablations/ablation_results.json"],
+      "notes": "p-value=0.9675. Prompt-engineered base scored 52.22%; trained adapter scored 49.66%."
+    },
+    {
+      "claim_id": "training_loss",
+      "claim": "SimPO training converged to loss 0.453 over 500 steps (125 epochs on 62 pairs).",
+      "value": 0.4531,
+      "source": "ablations/ablation_results.json",
+      "artifacts": ["ablations/ablation_results.json"]
     }
   ]
 }

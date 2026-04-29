@@ -1,0 +1,67 @@
+{
+  "model": "unsloth/Qwen3-0.6B",
+  "adapter": "tenacious-simpo-lora",
+  "lora_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "v_proj",
+      "k_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "simpo_config": {
+    "gamma": 0.5,
+    "beta": 2.0,
+    "lr": 5e-05,
+    "steps": 500,
+    "batch_size": 16,
+    "warmup_steps": 50
+  },
+  "training_pairs": 62,
+  "seed": 42,
+  "baseline": {
+    "held_out_avg": 0.7459,
+    "held_out_dc": 0.6323,
+    "held_out_sg": 0.7179
+  },
+  "prompt_engineered": {
+    "held_out_avg": 0.5222
+  },
+  "post_training": {
+    "held_out_avg": 0.4966,
+    "held_out_dc": 0.5869,
+    "held_out_sg": 0.4
+  },
+  "delta_a": {
+    "lift_pts": -24.92,
+    "ci_95_pts": [
+      -33.98,
+      -15.6
+    ],
+    "p_value": 1.0,
+    "significant": false
+  },
+  "delta_b": {
+    "lift_pts": -2.56,
+    "p_value": 0.9675,
+    "significant": false
+  },
+  "cost_pareto": {
+    "avg_latency_ms_with_adapter": 11673.8,
+    "avg_latency_ms_baseline": 0
+  },
+  "train_metrics": {
+    "train_runtime": 2736.9444,
+    "train_samples_per_second": 2.923,
+    "train_steps_per_second": 0.183,
+    "total_flos": 0.0,
+    "train_loss": 0.4530864400714636,
+    "epoch": 125.0
+  }
+}
