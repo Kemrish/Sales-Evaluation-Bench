@@ -140,6 +140,61 @@ You must generate a task in THIS EXACT JSON FORMAT (no markdown, raw JSON only):
 }"""
 
 
+def _task_fingerprint(task: dict) -> str:
+    """Return a single string representing the task's semantic content for overlap comparison."""
+    ctx = task.get("prospect_context", {})
+    return " ".join([
+        str(task.get("description", "")),
+        str(task.get("ground_truth_note", "")),
+        str(ctx.get("company_name", "")),
+        str(ctx.get("engineering_roles_open", "")),
+        str(task.get("reply_intent", "")),
+        str(task.get("candidate_output", {}).get("action", "")),
+    ]).lower()
+
+
+def _word_ngrams(text: str, n: int = 4) -> set[tuple]:
+    """Return the set of word n-grams for a text string."""
+    words = text.split()
+    return set(tuple(words[i:i + n]) for i in range(len(words) - n + 1))
+
+
+def ngram_similarity(task_a: dict, task_b: dict, n: int = 4) -> float:
+    """Compute Jaccard similarity of word n-grams between two tasks' fingerprints.
+
+    Threshold guidance:
+      >= 0.70 — near-duplicate: same scenario, different surface wording; drop the lower-scoring one.
+      0.40–0.69 — similar but distinct: different edge case or company profile; keep both.
+      < 0.40 — clearly distinct: different failure mode or dimension edge.
+
+    Uses word 4-grams over the concatenated description + ground_truth_note + key input fields.
+    n=4 is chosen because shorter grams over-flag incidental phrase overlap, while longer grams
+    miss paraphrased near-duplicates.
+    """
+    fa = _task_fingerprint(task_a)
+    fb = _task_fingerprint(task_b)
+    grams_a = _word_ngrams(fa, n)
+    grams_b = _word_ngrams(fb, n)
+    if not grams_a and not grams_b:
+        return 1.0
+    if not grams_a or not grams_b:
+        return 0.0
+    intersection = len(grams_a & grams_b)
+    union = len(grams_a | grams_b)
+    return intersection / union
+
+
+def is_near_duplicate(task_a: dict, task_b: dict, threshold: float = 0.70) -> bool:
+    """Return True if two candidate tasks are near-duplicates and one should be dropped.
+
+    Threshold: 0.70 Jaccard on word 4-grams. Tasks at or above this threshold share enough
+    scenario structure that keeping both would skew evaluation toward that failure mode.
+    When a duplicate is detected, the caller should retain the task with higher judge scores
+    (coherence + verifiability + clarity) and discard the other.
+    """
+    return ngram_similarity(task_a, task_b) >= threshold
+
+
 def call_openrouter(messages: list[dict], model: str, max_tokens: int = 800) -> str:
     headers = {
         "Authorization": f"Bearer {API_KEY}",
@@ -334,11 +389,43 @@ def generate():
                 continue
 
             full_task = raw_to_full_task(raw, seed, seq)
+
+            # Pairwise near-duplicate check against all previously accepted tasks.
+            # If similarity >= 0.70 Jaccard (word 4-grams), keep the higher-scoring one.
+            duplicate_of = None
+            for i, existing in enumerate(tasks):
+                if is_near_duplicate(raw, existing.get("_raw", raw)):
+                    existing_score = sum(existing.get("_judge_scores", {}).values())
+                    new_score = sum(scores.get(k, 0) for k in ("coherence", "verifiability", "clarity"))
+                    if new_score > existing_score:
+                        duplicate_of = i  # replace existing with new (higher quality)
+                    else:
+                        duplicate_of = -1  # drop new (existing is better)
+                    break
+
+            if duplicate_of == -1:
+                print(f"  Dropped (near-duplicate of existing, lower score)")
+                rejected += 1
+                continue
+            elif duplicate_of is not None:
+                print(f"  Replacing task at index {duplicate_of} (near-duplicate, higher score)")
+                full_task["_raw"] = raw
+                full_task["_judge_scores"] = scores
+                tasks[duplicate_of] = full_task
+                continue
+
+            full_task["_raw"] = raw
+            full_task["_judge_scores"] = scores
             tasks.append(full_task)
             print(f"  Accepted: {full_task['task_id']} (scores: {scores})")
             seq += 1
 
             time.sleep(0.5)  # Rate limit
+
+    # Strip internal tracking fields before writing
+    for t in tasks:
+        t.pop("_raw", None)
+        t.pop("_judge_scores", None)
 
     # Write outputs
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
