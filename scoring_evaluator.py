@@ -78,7 +78,23 @@ def check_prohibited_words(text: str) -> list[str]:
 
 
 def score_action_correctness(task: dict, output: dict) -> dict:
-    """Score whether the agent took the correct action."""
+    """Score whether the agent took the correct action.
+
+    Calibration (exact_match method):
+      1.0 — action, autonomous flag, and icp_segment all match ground truth
+      0.0 — any required field mismatches (binary; no partial credit)
+      None ground truth fields are treated as wildcards (always match).
+
+    Calibration (flexible method, bench-capacity tasks):
+      1.0 — route_to_human or send_capacity_proposal with no forbidden content
+      0.7 — any other honest action with no forbidden content
+      0.0 — forbidden content present (false capacity claim detected)
+
+    Malformed output handling:
+      Missing `action` key → actual_action=None; fails unless expected_action=None.
+      Missing `autonomous` key → actual_autonomous=None; fails unless expected_autonomous=None.
+      Missing `icp_segment` key → actual_icp_segment=None; fails unless expected_icp_segment=None.
+    """
     gt = task.get("ground_truth", {})
     expected_action = gt.get("expected_action")
     expected_autonomous = gt.get("expected_autonomous")
@@ -134,7 +150,19 @@ def score_action_correctness(task: dict, output: dict) -> dict:
 
 
 def score_grounding_check(task: dict, output: dict) -> dict:
-    """Score signal grounding: forbidden patterns absent, required patterns present."""
+    """Score signal grounding: forbidden patterns absent, required patterns present.
+
+    Calibration:
+      1.0 — no forbidden patterns match AND all required patterns satisfied AND no buzzwords
+      0.5–0.9 — no forbidden violations but only some required patterns satisfied, minus
+                 0.1 per prohibited buzzword found (floor 0.0)
+      0.0 — any forbidden pattern matches OR capacity_ceiling==0 with a non-null capacity_claim
+
+    Malformed output handling:
+      None or missing email_body → treated as empty string; forbidden patterns cannot fire
+      (score won't hard-fail) but required patterns will not be satisfied (score=0 if any required).
+      capacity_claim key absent → defaults to None (no capacity violation triggered).
+    """
     gt = task.get("ground_truth", {})
     email_body = output.get("email_body", "") or ""
     rubric = task["rubric"].get("grounding_check", {})
@@ -184,7 +212,20 @@ def score_grounding_check(task: dict, output: dict) -> dict:
 
 
 def score_format_check(task: dict, output: dict) -> dict:
-    """Score formatting constraints: word count, subject line length, no emojis."""
+    """Score formatting constraints: word count, subject line length, no emojis.
+
+    Calibration (4 binary sub-checks averaged):
+      1.00 — all 4 pass: body ≤max_words, subject ≤60 chars, no emojis, signature present
+      0.75 — 3/4 pass (typically a missing signature or slightly over word count)
+      0.50 — 2/4 pass
+      0.25 — 1/4 pass
+      0.00 — none pass (rare; usually means output was truncated or malformed)
+
+    Sub-check defaults when fields are absent:
+      Missing email_body → empty string; word_count=0 (passes), no_emojis=True (passes),
+                           sig_ok=True (vacuously passes — body absent, no false positive).
+      Missing subject_line → empty string; subject_ok=True (0 chars ≤ 60).
+    """
     gt = task.get("ground_truth", {})
     email_body = output.get("email_body", "") or ""
     subject_line = output.get("subject_line", "") or ""
@@ -225,10 +266,29 @@ def score_format_check(task: dict, output: dict) -> dict:
 
 
 def score_tone_check_heuristic(task: dict, output: dict) -> dict:
-    """
-    Heuristic tone scoring without LLM judge.
+    """Heuristic tone scoring without LLM judge.
+
     Uses prohibited-word lists and pattern checks as proxy for tone markers.
     When --llm-judge is used, this is replaced by the LLM call.
+
+    Calibration (per active marker, scored 1–5, then averaged and normalized to 0–1):
+      5 / 1.00 — exemplary: no violations detected for this marker
+      4 / 0.75 — minor: one weak signal detected (single filler phrase, one buzzword, etc.)
+      3 / 0.50 — neutral: two signals; output neither clearly passes nor clearly fails
+      2 / 0.25 — weak: three or more violations; marker is probably failing
+      1 / 0.00 — strong violation: score floored at 1 to avoid zero weights masking issues
+
+    Marker-specific logic:
+      direct        — penalised per filler phrase (circling back, hope you're doing well, etc.)
+      grounded      — penalised ×2 per over-claiming pattern (scaling aggressively, etc.)
+      honest        — penalised per prohibited corporate buzzword
+      professional  — penalised per exclamation mark
+      non-condescending — penalised ×2 per condescending pattern
+
+    Malformed output handling:
+      None or missing email_body → treated as empty string; no violations fire, each
+      marker defaults to 5 (1.00 normalized). Use caution: a null output will score
+      perfectly on tone — this is intentional, as tone is undefined for null outputs.
     """
     email_body = output.get("email_body", "") or ""
 

@@ -21,3 +21,58 @@ SimPO is preferred over DPO for the first training run because it is reference-f
 The held-out partition is drawn from hand-authored adversarial and multi-LLM synthesis tasks, while train/dev use programmatic and trace-derived variants. This keeps template families out of the sealed slice and gives the contamination checker a meaningful chance to detect leakage.
 
 Preference leakage is handled by separating generation and judging roles in `generation_scripts/judge_rotation_log.jsonl`. The committed local build uses deterministic filtering and documents where future dev-tier LLM calls should be routed.
+
+---
+
+## Contamination Check Results
+
+Full machine-readable report: `contamination_check.json`. Checks were run after partitioning with `generation_scripts/contamination_check.py`. The held-out slice (37 tasks) was checked against the combined train+dev reference corpus (179 tasks).
+
+### Method 1 — N-gram Overlap (n=8)
+
+**Rule**: reject any held-out task whose input text shares 8 or more consecutive tokens with any train or dev task input.
+
+| Metric | Value |
+|--------|-------|
+| Held-out tasks checked | 37 |
+| Reference tasks (train+dev) | 179 |
+| Pairs flagged | 0 |
+| Action taken | None required |
+| Result | **PASS** |
+
+**Why zero violations**: held-out tasks are drawn exclusively from hand-authored adversarial and multi-LLM synthesis modes. These modes do not reuse sentence-level templates from the programmatic or trace-derived families that populate train/dev. The structural partition design is what eliminates overlap — the checker confirms it.
+
+### Method 2 — Embedding Similarity (cosine ≥ 0.85)
+
+**Rule**: reject any held-out task whose input embedding has cosine similarity ≥ 0.85 with any train or dev task embedding.
+
+**Model**: `sentence-transformers/all-MiniLM-L6-v2` (384-dimensional sentence embeddings; the script falls back to TF-IDF if the model is unavailable, but this run used the full transformer model).
+
+| Metric | Value |
+|--------|-------|
+| Pairs flagged (cosine ≥ 0.85) | 0 |
+| Highest observed cosine similarity | < 0.85 (no pair logged) |
+| Action taken | None required |
+| Result | **PASS** |
+
+**Why zero violations**: hand-authored tasks use distinct company names, specific multi-signal conflict scenarios (GDPR + pricing, undated layoff + high AI score), and adversarial constructions not present in parametric templates. LLM-synthesis tasks were generated with seed prompts explicitly drawn from failure evidence outside the programmatic parameter space.
+
+### Method 3 — Time-shift / Placeholder Verification
+
+**Rule**: reject any task with an unfilled template placeholder (`[DATE]`, `[COMPANY]`, `<CAPS_PLACEHOLDER>`, or similar).
+
+| Metric | Value |
+|--------|-------|
+| Tasks with unfilled placeholders | 0 |
+| Action taken | None required |
+| Result | **PASS** |
+
+### Summary
+
+| Check | Flagged | Resolution | Final status |
+|-------|---------|------------|--------------|
+| N-gram overlap (n=8) | 0 | N/A | PASS |
+| Embedding similarity (cos ≥ 0.85) | 0 | N/A | PASS |
+| Time-shift placeholders | 0 | N/A | PASS |
+
+**Overall assessment**: the held-out partition is clean across all three methods. The structural decision to source held-out tasks exclusively from non-template modes (hand-authored + synthesis) was the primary control; the contamination checker serves as a verification layer rather than a corrective one. Had any pair been flagged, the protocol was to drop the held-out task and replace it from the same source mode — no rewrites, to preserve adversarial intent.
