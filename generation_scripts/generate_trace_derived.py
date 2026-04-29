@@ -38,6 +38,7 @@ COMPANY_POOL = [
 
 
 def make_task_id(dim_code: str, seq: int) -> str:
+    """Return a trace-derived task ID for the given dimension code and sequence number."""
     return f"TB-{dim_code}-TD-{seq:03d}"
 
 
@@ -472,6 +473,7 @@ def make_ic_task(probe: dict, company: dict, seq: int, is_bad_output: bool) -> d
 
 
 def generate():
+    """Load probe catalog, instantiate 2 variants per probe, write to raw_trace_derived.jsonl."""
     probes = json.loads(PROBE_CATALOG.read_text(encoding="utf-8"))
     tasks = []
     seq = 1

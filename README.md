@@ -15,15 +15,28 @@ Current state: Acts I-III complete. Act IV (training + ablations) in progress.
 
 ## Repository Layout
 
-- `audit_memo.md`: benchmark-gap audit.
+- `audit_memo.md`: benchmark-gap audit (8 gaps, 30 probe IDs).
+- `datasheet.md`: Gebru + Pushkarna datasheet (7 sections + layered detail).
+- `methodology.md`: Path B justification, benchmark design, training plan, and cost budget.
+- `methodology_rationale.md`: extended rationale for design decisions.
 - `schema.json`: Tenacious-Bench task schema plus three scored examples.
 - `scoring_evaluator.py`: machine-verifiable scoring evaluator.
+- `contamination_check.json`: contamination report (n-gram, embedding, time-shift results).
+- `cost_log.md`: API cost log for all LLM calls during dataset authoring.
+- `evidence_graph.json`: machine-readable claim registry with artifact pointers.
+- `inter_rater_agreement.md`: single-annotator agreement protocol and results.
 - `tenacious_bench_v0.1/`: raw tasks plus `train/`, `dev/`, and `held_out/` partitions.
 - `generation_scripts/`: task generation, partitioning, judge routing, and contamination checks.
+  - `generate_programmatic.py` — deterministic parameter sweeps; no LLM calls.
+  - `generate_trace_derived.py` — deterministic probe-to-task conversion; no LLM calls.
+  - `generate_sg_extra.py` — deterministic SG extras (`random.seed(99)`); no LLM calls.
+  - `generate_synthesis.py` — multi-LLM synthesis with judge rotation (requires `OPENROUTER_API_KEY`).
+  - `partition.py` — contamination-aware train/dev/held-out split.
+  - `contamination_check.py` — n-gram, embedding-similarity, and time-shift checks.
 - `training_data/`: Path B preference-pair formatter and generated pairs.
 - `training/`: Colab training notebook for SimPO LoRA.
 - `ablations/`: evaluation scripts and result templates.
-- `synthesis_memos/`: reading and design memos.
+- `synthesis_memos/`: paper-reading and design memos.
 
 ## Setup
 

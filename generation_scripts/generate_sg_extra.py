@@ -1,4 +1,8 @@
-"""Extra signal-grounding programmatic tasks to reach 200+ total."""
+"""Extra signal-grounding programmatic tasks to reach 200+ total.
+
+Fully deterministic — no LLM calls. Uses random.seed(99). Sweeps 25 scenarios
+across (eng_roles, velocity, signal_sources, ai_score, undated_layoff) parameters.
+"""
 import json, random
 random.seed(99)
 from pathlib import Path

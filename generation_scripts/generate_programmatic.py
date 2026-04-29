@@ -38,6 +38,7 @@ seq_counter = [1]
 
 
 def next_id(dim: str) -> str:
+    """Return next sequential task ID for the given dimension code."""
     n = seq_counter[0]
     seq_counter[0] += 1
     return f"TB-{dim}-PG-{n:03d}"
@@ -71,6 +72,7 @@ ESCALATION_TRIGGERS = [
 
 
 def gen_dc_tasks() -> list[dict]:
+    """Generate dual-control decision tasks via intent×confidence parameter sweep."""
     tasks = []
     companies = COMPANY_NAMES.copy()
     random.shuffle(companies)
@@ -243,6 +245,7 @@ BENCH_SCENARIOS = [
 
 
 def gen_bc_tasks() -> list[dict]:
+    """Generate bench capacity honesty tasks via stack×availability×requested parameter sweep."""
     tasks = []
     companies = COMPANY_NAMES.copy()
     random.shuffle(companies)
@@ -392,6 +395,7 @@ ICP_SCENARIOS = [
 
 
 def gen_ic_tasks() -> list[dict]:
+    """Generate ICP classification tasks via funding×size×signal parameter sweep."""
     tasks = []
     companies = COMPANY_NAMES.copy()
     random.shuffle(companies)
@@ -514,6 +518,7 @@ FORBIDDEN_BY_VIOLATION = {
 
 
 def gen_ta_tasks() -> list[dict]:
+    """Generate tone adherence tasks via turn×prospect-tone×violation parameter sweep."""
     tasks = []
     companies = COMPANY_NAMES.copy()
     random.shuffle(companies)
@@ -596,6 +601,7 @@ def gen_ta_tasks() -> list[dict]:
 
 
 def generate():
+    """Collect all programmatic tasks and write to raw_programmatic.jsonl."""
     all_tasks = []
     all_tasks.extend(gen_dc_tasks())
     all_tasks.extend(gen_bc_tasks())

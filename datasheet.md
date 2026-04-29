@@ -146,10 +146,10 @@ Do not use this dataset to evaluate models on email generation quality in isolat
 ## 6. Distribution
 
 **Will the dataset be distributed?**
-The dataset is intended for internal use and potential HuggingFace release as part of the Tenacious-Bench public artifact. Distribution decision pending legal review of synthetic company data and probe catalog IP.
+Yes. The train and dev partitions are publicly released on HuggingFace Hub under CC BY 4.0. The held-out partition is released after the leaderboard is published (v1.0). Distribution follows a staggered timeline: train/dev are available now; held-out is released post-training to prevent benchmark gaming. All company names, funding figures, and prospect replies are synthetic; no personal information or proprietary deal data is included.
 
 **Under what license?**
-To be determined. Candidate: CC BY 4.0 (synthetic data, no personal information).
+CC BY 4.0. Rationale: (1) all task data is synthetic — no real prospect records, PII, or proprietary deal information; (2) the probe catalog is derived from publicly observable sales-agent failure modes, not confidential Tenacious trade secrets; (3) CC BY 4.0 permits academic reuse, derivatives, and leaderboard submissions with attribution. The scoring evaluator and generation scripts are released under the same license. See `methodology.md` for the full license rationale.
 
 **Is the dataset self-contained?**
 Yes. All tasks are self-contained JSON objects. The scoring evaluator (`scoring_evaluator.py`) is included and requires only `httpx` (for LLM judge calls) and optionally `sentence-transformers` (for embedding contamination check).
