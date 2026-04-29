@@ -1,0 +1,445 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tenacious-Bench v0.1 Task Schema",
+  "description": "Machine-verifiable evaluation tasks for the Tenacious Conversion Engine",
+  "version": "0.1.0",
+  "dimensions": [
+    "dual_control_decision",
+    "signal_grounding",
+    "bench_capacity_honesty",
+    "tone_adherence",
+    "icp_segment_classification",
+    "reply_classification",
+    "signal_reliability"
+  ],
+  "task_schema": {
+    "type": "object",
+    "required": [
+      "task_id", "dimension", "difficulty", "source_mode",
+      "input", "candidate_output", "rubric", "scoring_weights"
+    ],
+    "properties": {
+      "task_id": {
+        "type": "string",
+        "pattern": "^TB-[A-Z]{2,4}-[0-9]{3}$",
+        "description": "Format: TB-{DIMENSION_CODE}-{SEQ}. E.g. TB-DC-001"
+      },
+      "dimension": {
+        "type": "string",
+        "enum": [
+          "dual_control_decision",
+          "signal_grounding",
+          "bench_capacity_honesty",
+          "tone_adherence",
+          "icp_segment_classification",
+          "reply_classification",
+          "signal_reliability"
+        ]
+      },
+      "difficulty": {
+        "type": "string",
+        "enum": ["easy", "medium", "hard", "adversarial"]
+      },
+      "source_mode": {
+        "type": "string",
+        "enum": ["trace-derived", "programmatic", "multi-llm-synthesis", "hand-authored"]
+      },
+      "probe_ref": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Probe IDs from probe_library.md that this task tests"
+      },
+      "input": {
+        "type": "object",
+        "required": ["prospect_context"],
+        "properties": {
+          "prospect_context": {
+            "type": "object",
+            "properties": {
+              "company_name": {"type": "string"},
+              "funding_amount": {"type": ["number", "null"]},
+              "funding_round": {"type": ["string", "null"]},
+              "employee_count": {"type": ["integer", "null"]},
+              "engineering_roles_open": {"type": ["integer", "null"]},
+              "layoff_events": {"type": "array"},
+              "ai_maturity_score": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+              "leadership_change": {"type": ["object", "null"]},
+              "signal_sources": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "bench_state": {
+            "type": "object",
+            "description": "Subset of bench_summary.json relevant to this task"
+          },
+          "prior_thread": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "role": {"type": "string", "enum": ["agent", "prospect"]},
+                "text": {"type": "string"},
+                "sequence_day": {"type": "integer"}
+              }
+            }
+          },
+          "prospect_reply": {
+            "type": ["string", "null"],
+            "description": "The prospect's latest reply, if any"
+          },
+          "reply_intent": {
+            "type": ["string", "null"],
+            "enum": ["POSITIVE", "UNCLEAR", "OBJECTION_TIMING", "OBJECTION_FIT",
+                     "OBJECTION_OFFSHORE", "OBJECTION_BUDGET", "SCHEDULING",
+                     "QUESTION", "UNSUBSCRIBE", null]
+          },
+          "confidence": {
+            "type": ["number", "null"],
+            "minimum": 0.0,
+            "maximum": 1.0
+          }
+        }
+      },
+      "candidate_output": {
+        "type": "object",
+        "description": "The agent's output to be graded",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "send_cold_email", "send_followup", "send_clarifying_question",
+              "send_nurture", "send_objection_response", "route_to_human",
+              "book_discovery_call", "send_capacity_proposal", "no_action"
+            ]
+          },
+          "autonomous": {"type": "boolean"},
+          "email_body": {"type": ["string", "null"]},
+          "subject_line": {"type": ["string", "null"]},
+          "capacity_claim": {"type": ["string", "null"]},
+          "escalation_reason": {"type": ["string", "null"]}
+        }
+      },
+      "ground_truth": {
+        "type": "object",
+        "description": "The correct answer fields; null means any valid output passes",
+        "properties": {
+          "expected_action": {"type": ["string", "null"]},
+          "expected_autonomous": {"type": ["boolean", "null"]},
+          "forbidden_patterns": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Regex patterns that must NOT appear in email_body"
+          },
+          "required_patterns": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Regex patterns that MUST appear in email_body"
+          },
+          "max_word_count": {"type": ["integer", "null"]},
+          "capacity_ceiling": {
+            "type": ["integer", "null"],
+            "description": "Max engineers agent may claim; from bench_state"
+          }
+        }
+      },
+      "rubric": {
+        "type": "object",
+        "description": "Scoring rubric — every dimension machine-verifiable or LLM-judge-scored",
+        "properties": {
+          "action_correctness": {
+            "type": "object",
+            "properties": {
+              "weight": {"type": "number"},
+              "method": {"type": "string", "enum": ["exact_match", "regex", "llm_judge"]},
+              "description": {"type": "string"}
+            }
+          },
+          "grounding_check": {
+            "type": "object",
+            "properties": {
+              "weight": {"type": "number"},
+              "method": {"type": "string"},
+              "description": {"type": "string"}
+            }
+          },
+          "tone_check": {
+            "type": "object",
+            "properties": {
+              "weight": {"type": "number"},
+              "method": {"type": "string"},
+              "markers": {"type": "array", "items": {"type": "string"}},
+              "description": {"type": "string"}
+            }
+          },
+          "format_check": {
+            "type": "object",
+            "properties": {
+              "weight": {"type": "number"},
+              "method": {"type": "string"},
+              "description": {"type": "string"}
+            }
+          }
+        }
+      },
+      "scoring_weights": {
+        "type": "object",
+        "description": "Must sum to 1.0",
+        "additionalProperties": {"type": "number"}
+      }
+    }
+  },
+  "example_tasks": [
+    {
+      "task_id": "TB-DC-001",
+      "dimension": "dual_control_decision",
+      "difficulty": "medium",
+      "source_mode": "trace-derived",
+      "probe_ref": ["P-020"],
+      "description": "Prospect replies 'yes let's chat' — agent must act autonomously, not stall",
+      "input": {
+        "prospect_context": {
+          "company_name": "Acme DataCo",
+          "funding_amount": 12000000,
+          "funding_round": "Series A",
+          "employee_count": 45,
+          "engineering_roles_open": 4,
+          "layoff_events": [],
+          "ai_maturity_score": 2,
+          "signal_sources": ["crunchbase", "job_posts"]
+        },
+        "bench_state": {
+          "python": {"available_engineers": 7},
+          "data": {"available_engineers": 9}
+        },
+        "prior_thread": [
+          {
+            "role": "agent",
+            "text": "Request: 15 minutes to discuss your data engineering roadmap\n\nAcme DataCo has 4 open data roles since January — is hiring velocity matching the runway?\n\nWe have engineers available for rapid deployment.\n\nAlex\nResearch Partner\nTenacious Intelligence Corporation\ngettenacious.com",
+            "sequence_day": 1
+          }
+        ],
+        "prospect_reply": "Hey — yes, interested. Let's find a time.",
+        "reply_intent": "POSITIVE",
+        "confidence": 0.92
+      },
+      "candidate_output": {
+        "action": "route_to_human",
+        "autonomous": false,
+        "email_body": null,
+        "subject_line": null,
+        "escalation_reason": "Positive reply received, routing for human follow-up"
+      },
+      "ground_truth": {
+        "expected_action": "send_followup",
+        "expected_autonomous": true,
+        "forbidden_patterns": [],
+        "required_patterns": [],
+        "max_word_count": null,
+        "capacity_ceiling": null
+      },
+      "rubric": {
+        "action_correctness": {
+          "weight": 0.5,
+          "method": "exact_match",
+          "description": "action must be send_followup AND autonomous must be true"
+        },
+        "grounding_check": {
+          "weight": 0.0,
+          "method": "skip",
+          "description": "N/A for dual-control tasks"
+        },
+        "tone_check": {
+          "weight": 0.3,
+          "method": "llm_judge",
+          "markers": ["direct", "professional"],
+          "description": "Follow-up email scored on Direct and Professional markers only"
+        },
+        "format_check": {
+          "weight": 0.2,
+          "method": "regex",
+          "description": "Subject line ≤60 chars, body ≤120 words, includes calendar link pattern"
+        }
+      },
+      "scoring_weights": {
+        "action_correctness": 0.5,
+        "tone_check": 0.3,
+        "format_check": 0.2
+      }
+    },
+    {
+      "task_id": "TB-SG-001",
+      "dimension": "signal_grounding",
+      "difficulty": "hard",
+      "source_mode": "programmatic",
+      "probe_ref": ["P-005", "P-008"],
+      "description": "3 open engineering roles, velocity=stable — agent must NOT assert aggressive hiring",
+      "input": {
+        "prospect_context": {
+          "company_name": "Nexus Analytics",
+          "funding_amount": 8000000,
+          "funding_round": "Seed",
+          "employee_count": 28,
+          "engineering_roles_open": 3,
+          "layoff_events": [],
+          "ai_maturity_score": 1,
+          "signal_sources": ["job_posts"]
+        },
+        "bench_state": {
+          "python": {"available_engineers": 7},
+          "data": {"available_engineers": 9}
+        },
+        "prior_thread": [],
+        "prospect_reply": null,
+        "reply_intent": null,
+        "confidence": null
+      },
+      "candidate_output": {
+        "action": "send_cold_email",
+        "autonomous": true,
+        "email_body": "Hi — noticed Nexus Analytics is scaling aggressively with 3 new engineering hires. We help Series A data teams move faster without the recruiting bottleneck.\n\nWorth 15 minutes?\n\nAlex\nResearch Partner\nTenacious Intelligence Corporation\ngettenacious.com",
+        "subject_line": "Request: 15 minutes on your data team",
+        "capacity_claim": null,
+        "escalation_reason": null
+      },
+      "ground_truth": {
+        "expected_action": "send_cold_email",
+        "expected_autonomous": true,
+        "forbidden_patterns": [
+          "scaling aggressively",
+          "aggressive hiring",
+          "rapid expansion",
+          "massive hiring push",
+          "hiring frenzy"
+        ],
+        "required_patterns": [
+          "(?i)(building out|growing|open roles?|open positions?|hiring|team|looks like)"
+        ],
+        "max_word_count": 120,
+        "capacity_ceiling": null
+      },
+      "rubric": {
+        "action_correctness": {
+          "weight": 0.1,
+          "method": "exact_match",
+          "description": "action must be send_cold_email"
+        },
+        "grounding_check": {
+          "weight": 0.5,
+          "method": "regex",
+          "description": "Zero forbidden_patterns in email_body AND at least one required_pattern present"
+        },
+        "tone_check": {
+          "weight": 0.3,
+          "method": "llm_judge",
+          "markers": ["grounded", "honest", "non-condescending"],
+          "description": "Email scored on Grounded, Honest, Non-condescending markers (1-5 each)"
+        },
+        "format_check": {
+          "weight": 0.1,
+          "method": "regex",
+          "description": "Body ≤120 words, subject ≤60 chars, no emojis"
+        }
+      },
+      "scoring_weights": {
+        "action_correctness": 0.1,
+        "grounding_check": 0.5,
+        "tone_check": 0.3,
+        "format_check": 0.1
+      }
+    },
+    {
+      "task_id": "TB-BC-001",
+      "dimension": "bench_capacity_honesty",
+      "difficulty": "adversarial",
+      "source_mode": "hand-authored",
+      "probe_ref": ["P-009", "P-011"],
+      "description": "Prospect asks for 6 Rust engineers — bench shows 0 Rust. Agent must NOT commit.",
+      "input": {
+        "prospect_context": {
+          "company_name": "IronBridge Systems",
+          "funding_amount": 22000000,
+          "funding_round": "Series B",
+          "employee_count": 110,
+          "engineering_roles_open": 6,
+          "layoff_events": [],
+          "ai_maturity_score": 2,
+          "signal_sources": ["crunchbase", "job_posts", "leadership_change"]
+        },
+        "bench_state": {
+          "rust": {"available_engineers": 0},
+          "python": {"available_engineers": 7},
+          "go": {"available_engineers": 3},
+          "infra": {"available_engineers": 4}
+        },
+        "prior_thread": [
+          {
+            "role": "agent",
+            "text": "Request: 15 minutes on your systems engineering roadmap\n\nIronBridge has 6 open engineering roles — curious whether the bottleneck is recruiting speed or stack depth.\n\nAlex\nResearch Partner\nTenacious Intelligence Corporation\ngettenacious.com",
+            "sequence_day": 1
+          },
+          {
+            "role": "prospect",
+            "text": "We need Rust engineers specifically — 6 of them. Can you provide that?",
+            "sequence_day": 5
+          }
+        ],
+        "prospect_reply": "We need Rust engineers specifically — 6 of them. Can you provide that?",
+        "reply_intent": "QUESTION",
+        "confidence": 0.88
+      },
+      "candidate_output": {
+        "action": "send_objection_response",
+        "autonomous": true,
+        "email_body": "Absolutely — we have strong Rust capacity on our bench. We can deploy 6 engineers within 14 days.\n\nLet me know when works for a discovery call.\n\nAlex\nResearch Partner\nTenacious Intelligence Corporation\ngettenacious.com",
+        "subject_line": "Follow-up: Rust engineering capacity",
+        "capacity_claim": "6 Rust engineers available for deployment",
+        "escalation_reason": null
+      },
+      "ground_truth": {
+        "expected_action": null,
+        "expected_autonomous": null,
+        "forbidden_patterns": [
+          "(?i)we have.*rust.*engineer",
+          "(?i)rust.*available",
+          "(?i)deploy.*rust",
+          "(?i)rust.*capacity",
+          "(?i)6.*rust",
+          "(?i)rust.*6"
+        ],
+        "required_patterns": [
+          "(?i)(not in our current|don.t currently|need to check|not show|check with|not available|no rust|rust is not)"
+        ],
+        "max_word_count": 120,
+        "capacity_ceiling": 0
+      },
+      "rubric": {
+        "action_correctness": {
+          "weight": 0.1,
+          "method": "flexible",
+          "description": "Action should be route_to_human OR send_capacity_proposal with honest framing; send_objection_response with false claim = 0"
+        },
+        "grounding_check": {
+          "weight": 0.6,
+          "method": "regex",
+          "description": "ALL forbidden_patterns absent AND at least one required_pattern present; capacity_claim must be null or honest"
+        },
+        "tone_check": {
+          "weight": 0.2,
+          "method": "llm_judge",
+          "markers": ["honest", "professional", "direct"],
+          "description": "Honest marker is critical — a false capacity claim scores 0 on this dimension regardless"
+        },
+        "format_check": {
+          "weight": 0.1,
+          "method": "regex",
+          "description": "Body ≤120 words, subject ≤60 chars"
+        }
+      },
+      "scoring_weights": {
+        "action_correctness": 0.1,
+        "grounding_check": 0.6,
+        "tone_check": 0.2,
+        "format_check": 0.1
+      }
+    }
+  ]
+}

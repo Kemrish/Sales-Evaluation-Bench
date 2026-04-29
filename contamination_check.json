@@ -1,0 +1,5881 @@
+{
+  "contamination_check_version": "1.0",
+  "train_size": 110,
+  "dev_size": 62,
+  "held_out_size": 41,
+  "checks": [
+    {
+      "check": "ngram_overlap",
+      "n": 8,
+      "violations": [
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-DC-PG-030",
+          "overlap_ngrams": 7
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-IC-PG-064",
+          "matching_ref_task_id": "TB-IC-PG-057",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-IC-PG-064",
+          "matching_ref_task_id": "TB-IC-PG-056",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 33
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 33
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 43
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 28
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 28
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 23
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 28
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 24
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 23
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 23
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 24
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 23
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 23
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 23
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 24
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 28
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 24
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 26
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 27
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 6
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 27
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-075",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-039",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-SY-TD-031",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-BC-TD-019",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-047",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-050",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-049",
+          "overlap_ngrams": 10
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-SY-TD-033",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-BC-TD-017",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-043",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-042",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-PG-002",
+          "overlap_ngrams": 7
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-SY-TD-034",
+          "overlap_ngrams": 47
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-039",
+          "overlap_ngrams": 10
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-044",
+          "overlap_ngrams": 47
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-PG-004",
+          "overlap_ngrams": 7
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-041",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-048",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-040",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-045",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-BC-TD-019",
+          "overlap_ngrams": 26
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-DC-TD-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-BC-TD-017",
+          "overlap_ngrams": 43
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-DC-TD-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-DC-PG-002",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-SY-TD-034",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-DC-TD-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-DC-PG-004",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-DC-TD-048",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-DC-TD-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 25
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 25
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 25
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 6
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-076",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-SY-TD-031",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-BC-TD-019",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-047",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-050",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-049",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-SY-TD-033",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-BC-TD-017",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-043",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-042",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-PG-002",
+          "overlap_ngrams": 7
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-SY-TD-034",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-039",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-044",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-PG-004",
+          "overlap_ngrams": 7
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-041",
+          "overlap_ngrams": 10
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-048",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-040",
+          "overlap_ngrams": 40
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-045",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 22
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 22
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-IC-PG-052",
+          "matching_ref_task_id": "TB-IC-PG-053",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-IC-PG-052",
+          "matching_ref_task_id": "TB-IC-TD-003",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-IC-PG-052",
+          "matching_ref_task_id": "TB-IC-PG-062",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-IC-PG-052",
+          "matching_ref_task_id": "TB-IC-PG-054",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-004",
+          "matching_ref_task_id": "TB-IC-PG-057",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-004",
+          "matching_ref_task_id": "TB-IC-PG-056",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-004",
+          "matching_ref_task_id": "TB-IC-TD-008",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-004",
+          "matching_ref_task_id": "TB-IC-TD-005",
+          "overlap_ngrams": 5
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-001",
+          "matching_ref_task_id": "TB-IC-PG-053",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-001",
+          "matching_ref_task_id": "TB-IC-TD-003",
+          "overlap_ngrams": 6
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-001",
+          "matching_ref_task_id": "TB-IC-PG-062",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-001",
+          "matching_ref_task_id": "TB-IC-PG-054",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 6
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 27
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 26
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 26
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-073",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-HA-019",
+          "matching_ref_task_id": "TB-HA-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-HA-019",
+          "matching_ref_task_id": "TB-HA-008",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 19
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 19
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 19
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 5
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 19
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-041",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 19
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 19
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 19
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 5
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 19
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-048",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 18
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 18
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 18
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 18
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 18
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-037",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 4
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 6
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 26
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 28
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 27
+        },
+        {
+          "held_out_task_id": "TB-TA-PG-071",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 43
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-TD-019",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-TD-017",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 34
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-051",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 34
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-TD-019",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-TD-017",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 34
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-BC-PG-046",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 34
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-047",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-043",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-039",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-DC-PG-034",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-TA-PG-068",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-TA-PG-070",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-DC-PG-031",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-TA-PG-072",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-040",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-DC-PG-025",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-049",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-TA-PG-077",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-TD-018",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-DC-PG-010",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-036",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-038",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-DC-PG-027",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-044",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-TA-PG-069",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-035",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-TA-PG-074",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-TD-020",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-050",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-DC-PG-022",
+          "overlap_ngrams": 3
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-042",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-TD-022",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-TA-PG-067",
+          "overlap_ngrams": 2
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-BC-PG-045",
+          "overlap_ngrams": 1
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 22
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 22
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 22
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 42
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 33
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 31
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 33
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-013",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-060",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-056",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-014",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "overlap_ngrams": 22
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-009",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-032",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-012",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-059",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-031",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SY-TD-035",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-038",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SY-TD-037",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-010",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-015",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-036",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-042",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-017",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-TA-TD-027",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SY-TD-036",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-TA-TD-024",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-TA-TD-023",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-051",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-TA-TD-026",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-022",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-034",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-035",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-011",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-015",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-049",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-020",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-054",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-014",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-TA-TD-025",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-045",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-016",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-012",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "overlap_ngrams": 9
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-002",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-040",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-018",
+          "overlap_ngrams": 20
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-055",
+          "overlap_ngrams": 8
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "overlap_ngrams": 8
+        }
+      ],
+      "passed": false,
+      "total_held_out": 41,
+      "total_reference": 172
+    },
+    {
+      "check": "embedding_similarity",
+      "threshold": 0.85,
+      "method": "sentence-transformers/all-MiniLM-L6-v2",
+      "violations": [
+        {
+          "held_out_task_id": "TB-DC-PG-029",
+          "matching_ref_task_id": "TB-DC-PG-030",
+          "cosine_similarity": 0.8823
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-052",
+          "matching_ref_task_id": "TB-SY-TD-038",
+          "cosine_similarity": 1.0
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-017",
+          "matching_ref_task_id": "TB-DC-PG-018",
+          "cosine_similarity": 0.9768
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-053",
+          "cosine_similarity": 0.9972
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-057",
+          "cosine_similarity": 0.9972
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-TA-TD-029",
+          "cosine_similarity": 0.9972
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-009",
+          "matching_ref_task_id": "TB-SG-TD-013",
+          "cosine_similarity": 0.9972
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-023",
+          "matching_ref_task_id": "TB-DC-PG-024",
+          "cosine_similarity": 0.9033
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-SY-TD-034",
+          "cosine_similarity": 1.0
+        },
+        {
+          "held_out_task_id": "TB-DC-TD-046",
+          "matching_ref_task_id": "TB-DC-TD-044",
+          "cosine_similarity": 1.0
+        },
+        {
+          "held_out_task_id": "TB-BC-TD-021",
+          "matching_ref_task_id": "TB-BC-TD-017",
+          "cosine_similarity": 0.854
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-001",
+          "matching_ref_task_id": "TB-SG-PG2-021",
+          "cosine_similarity": 0.9948
+        },
+        {
+          "held_out_task_id": "TB-SY-TD-032",
+          "matching_ref_task_id": "TB-DC-TD-042",
+          "cosine_similarity": 0.8763
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-008",
+          "cosine_similarity": 0.9834
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-048",
+          "matching_ref_task_id": "TB-SG-PG2-028",
+          "cosine_similarity": 0.9862
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-007",
+          "matching_ref_task_id": "TB-DC-PG-008",
+          "cosine_similarity": 0.8722
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-020",
+          "matching_ref_task_id": "TB-DC-PG-019",
+          "cosine_similarity": 0.9113
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-004",
+          "matching_ref_task_id": "TB-IC-TD-008",
+          "cosine_similarity": 0.9221
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-004",
+          "matching_ref_task_id": "TB-IC-TD-005",
+          "cosine_similarity": 0.897
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-001",
+          "matching_ref_task_id": "TB-IC-TD-008",
+          "cosine_similarity": 0.9144
+        },
+        {
+          "held_out_task_id": "TB-IC-TD-001",
+          "matching_ref_task_id": "TB-IC-TD-005",
+          "cosine_similarity": 0.8853
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-046",
+          "cosine_similarity": 0.9957
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-026",
+          "matching_ref_task_id": "TB-SG-PG2-006",
+          "cosine_similarity": 0.9854
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-043",
+          "cosine_similarity": 0.9966
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-023",
+          "matching_ref_task_id": "TB-SG-PG2-003",
+          "cosine_similarity": 0.9778
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-058",
+          "matching_ref_task_id": "TB-TA-TD-030",
+          "cosine_similarity": 1.0
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-007",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "cosine_similarity": 0.9846
+        },
+        {
+          "held_out_task_id": "TB-DC-PG-033",
+          "matching_ref_task_id": "TB-DC-PG-034",
+          "cosine_similarity": 0.93
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-004",
+          "cosine_similarity": 0.9941
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-044",
+          "matching_ref_task_id": "TB-SG-PG2-024",
+          "cosine_similarity": 0.982
+        },
+        {
+          "held_out_task_id": "TB-SG-TD-016",
+          "matching_ref_task_id": "TB-TA-TD-028",
+          "cosine_similarity": 1.0
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-027",
+          "matching_ref_task_id": "TB-SG-PG2-047",
+          "cosine_similarity": 0.9943
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-030",
+          "cosine_similarity": 0.9853
+        },
+        {
+          "held_out_task_id": "TB-SG-PG2-010",
+          "matching_ref_task_id": "TB-SG-PG2-050",
+          "cosine_similarity": 0.9812
+        }
+      ],
+      "passed": false
+    },
+    {
+      "check": "time_shift_verification",
+      "issues": [],
+      "passed": true
+    }
+  ],
+  "overall_passed": false
+}

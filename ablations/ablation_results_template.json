@@ -1,0 +1,41 @@
+{
+  "_note": "This file is a template. Replace with actual results after running train_simpo_colab.ipynb on Colab T4.",
+  "model": "Qwen/Qwen3-0.6B",
+  "adapter": "tenacious-simpo-lora",
+  "lora_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": ["q_proj", "v_proj", "k_proj", "o_proj"]
+  },
+  "simpo_config": {
+    "gamma": 0.5,
+    "beta": 2.0,
+    "lr": 5e-5,
+    "steps": 500,
+    "batch_size": 16,
+    "warmup_steps": 50
+  },
+  "training_pairs": 72,
+  "baseline": {
+    "dual_control_avg": null,
+    "signal_grounding_avg": null
+  },
+  "post_training": {
+    "dual_control_avg": null,
+    "signal_grounding_avg": null
+  },
+  "delta_a_points": null,
+  "delta_b_points": null,
+  "targets_met": {
+    "delta_a_ge_15": null,
+    "delta_b_ge_10": null
+  },
+  "cost_breakdown": {
+    "dataset_authoring_usd": 4.0,
+    "colab_training_usd": 0.0,
+    "held_out_eval_usd": 2.0,
+    "reserve_usd": 1.0,
+    "total_usd": 7.0
+  }
+}
