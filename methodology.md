@@ -152,8 +152,8 @@ Preference pairs: `(prompt, chosen, rejected)`
 | LoRA rank | 16 |
 | LoRA alpha | 32 |
 | Target modules | q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj |
-| ORPO beta (λ) | 0.1 (odds-ratio weight, per Hong et al. default) |
-| Learning rate | 8e-6 (lower than SimPO — ORPO has joint SFT+pref loss) |
+| ORPO beta (λ) | 0.2 (increased from 0.1 default — strengthens preference signal for categorical policy failures) |
+| Learning rate | 2e-5 (increased from 8e-6 — needed to overcome base model bias in 500 steps at 0.8B scale) |
 | Batch size | 2 (grad_accum=8 → effective 16) |
 | Max steps | 500 |
 | Precision | 16-bit LoRA; fp16 on T4, bf16 on A100/4090 (per Unsloth Qwen3 guide) |
