@@ -31,8 +31,8 @@ Path C (PRM) would address trajectory failures. The Week 10 evidence shows only 
 
 Path B trains a component that, given (prospect_context, agent_action, email_body), outputs a preference score: is this output correct for this situation? This is precisely what the failures require.
 
-**Training algorithm choice: SimPO** (Simple Preference Optimization, Meng, Xia & Chen, NeurIPS 2024)  
-Rationale: SimPO is reference-free, which avoids the computational overhead of maintaining a reference model and reduces VRAM requirements on Colab T4. ORPO (Hong, Lee & Thorne, EMNLP 2024) is the alternative; SimPO is preferred because the Tenacious preference pairs are asymmetric (the rejected outputs are systematically wrong, not just slightly worse), which matches SimPO's assumption of a clear margin between chosen and rejected.
+**Training algorithm choice: ORPO** (Monolithic Preference Optimization without Reference Model, Hong, Lee & Thorne, EMNLP 2024)  
+Rationale: ORPO combines the SFT loss and preference loss in a single pass, requiring no reference model. This makes it more data-efficient than SimPO for small preference datasets (~100 pairs) because the SFT component anchors the model's output distribution while the odds-ratio loss steers it away from rejected responses simultaneously. SimPO (Meng, Xia & Chen, NeurIPS 2024) is the alternative; ORPO is preferred here because the training set is small (101 pairs) and the model backbone is at the lower end of instruction-following capacity (0.6B), making catastrophic forgetting a significant risk. ORPO's joint SFT+preference loss acts as a regulariser that SimPO — which has no SFT component — cannot provide. At larger dataset sizes (500+ pairs), SimPO's simpler length-normalised reward would be the preferred choice.
 
 ---
 
@@ -147,15 +147,16 @@ Preference pairs: `(prompt, chosen, rejected)`
 
 | Parameter | Value |
 |-----------|-------|
-| Backbone | Qwen/Qwen3-0.6B (or Qwen3-1.7B if VRAM permits) |
-| Training framework | Unsloth + TRL SimPO trainer |
+| Backbone | unsloth/Qwen3-0.6B |
+| Training framework | Unsloth + TRL ORPOTrainer |
 | LoRA rank | 16 |
 | LoRA alpha | 32 |
-| Target modules | q_proj, k_proj, v_proj, o_proj |
-| Learning rate | 5e-5 |
-| Batch size | 4 (grad_accum=4 → effective 16) |
+| Target modules | q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj |
+| ORPO beta (λ) | 0.1 (odds-ratio weight, per Hong et al. default) |
+| Learning rate | 8e-6 (lower than SimPO — ORPO has joint SFT+pref loss) |
+| Batch size | 2 (grad_accum=8 → effective 16) |
 | Max steps | 500 |
-| Precision | fp16 on T4, bf16 on A100/4090 |
+| Precision | 16-bit LoRA; fp16 on T4, bf16 on A100/4090 (per Unsloth Qwen3 guide) |
 | Random seed | 42 |
 
 ### 4.3 Ablation plan
