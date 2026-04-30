@@ -147,7 +147,7 @@ Preference pairs: `(prompt, chosen, rejected)`
 
 | Parameter | Value |
 |-----------|-------|
-| Backbone | unsloth/Qwen3-0.6B |
+| Backbone | unsloth/Qwen3.5-0.8B |
 | Training framework | Unsloth + TRL ORPOTrainer |
 | LoRA rank | 16 |
 | LoRA alpha | 32 |

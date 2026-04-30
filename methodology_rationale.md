@@ -2,7 +2,7 @@
 
 ## Selected Path
 
-I selected Path B: a preference-tuned judge/critic trained with SimPO-style preference pairs.
+I selected Path B: a preference-tuned judge/critic trained with ORPO preference pairs.
 
 The Week 10 evidence points to inconsistent self-evaluation rather than weak prose generation. The recurring failures were cases where the agent had enough information to choose the right sales action but either stalled or over-escalated. Trace IDs `433be069`, `132414ca`, and `cafec882` are representative: the agent classified a high-intent or policy-relevant situation but selected the wrong control action. The associated probes `P-020`, `P-021`, and `P-026` also show the same structure: a candidate output must be rejected because the decision policy is wrong, not because the email wording is merely awkward.
 
@@ -14,7 +14,7 @@ LIMA supports the decision to keep the preference set small and high-quality: at
 
 The LLM-as-a-Judge survey motivates separating task-quality filtering from final scoring and using explicit rubrics per dimension. This is why `scoring_evaluator.py` decomposes output quality into action correctness, grounding, tone, and format rather than using a single subjective "good outreach" label.
 
-SimPO is preferred over DPO for the first training run because it is reference-free and lighter for Colab T4. The preference pairs here are intentionally asymmetric: rejected outputs often violate clear policies, while chosen outputs satisfy machine-checkable rubrics. That margin-style setup is a natural fit for SimPO.
+ORPO is preferred over DPO and SimPO for this training run. It is reference-free (no frozen model copy needed, saving VRAM on Colab T4) and combines an SFT loss with the odds-ratio preference loss in one pass. The SFT component acts as a regulariser that prevents catastrophic forgetting — a critical property at 0.8B scale with only 158 preference pairs. SimPO was the initial choice but lacks this regulariser; at small dataset sizes where forgetting is the dominant failure mode, ORPO's joint objective is the better fit.
 
 ## Leakage Controls
 

@@ -130,7 +130,7 @@ Dataset was authored specifically for this project; it has not been used in any 
 
 **What are the intended uses?**
 - **Primary**: Offline evaluation of the Tenacious sales agent on the five core dimensions (dual-control, signal grounding, bench capacity honesty, ICP classification, tone adherence).
-- **Secondary**: SimPO preference pair training (Act III). The train partition is formatted into (chosen, rejected) pairs for LoRA fine-tuning of Qwen3-0.6B/1.7B backbone.
+- **Secondary**: ORPO preference pair training (Act III). The train partition is formatted into (chosen, rejected) pairs for LoRA fine-tuning of Qwen3.5-0.8B backbone.
 - **Tertiary**: Regression testing — held-out partition is sealed and used only for final benchmark reporting after training converges.
 
 **What are the out-of-scope uses?**

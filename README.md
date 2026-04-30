@@ -8,10 +8,10 @@ Current state: Acts I-III complete. Act IV (training + ablations) in progress.
 
 - 216 authored tasks across train/dev/held-out partitions.
 - Held-out contamination check passes (n-gram, sentence-transformers embedding, time-shift).
-- Path B selected: a preference-tuned judge/critic using SimPO.
-- 62 preference pairs generated from the train partition.
-- 9 synthesis memos committed (4 common-reading + 3 Path B + 2 project analysis).
-- Training notebook ready in `training/train_simpo_colab.ipynb` — run on Colab T4 to produce adapter.
+- Path B selected: a preference-tuned judge/critic using ORPO.
+- 158 preference pairs generated from the train partition (multi-paired, train-only).
+- 10 synthesis memos committed (4 common-reading + 4 Path B + 2 project analysis).
+- Training notebook ready in `training/train_orpo_colab.ipynb` — run on Colab T4 to produce adapter.
 
 ## Repository Layout
 
@@ -34,7 +34,7 @@ Current state: Acts I-III complete. Act IV (training + ablations) in progress.
   - `partition.py` — contamination-aware train/dev/held-out split.
   - `contamination_check.py` — n-gram, embedding-similarity, and time-shift checks.
 - `training_data/`: Path B preference-pair formatter and generated pairs.
-- `training/`: Colab training notebook for SimPO LoRA.
+- `training/`: Colab training notebook for ORPO LoRA (`train_orpo_colab.ipynb`).
 - `ablations/`: evaluation scripts and result templates.
 - `synthesis_memos/`: paper-reading and design memos.
 
@@ -66,7 +66,7 @@ Expected current counts:
 - Train: 111
 - Dev: 68
 - Held-out: 37
-- Preference pairs: 62
+- Preference pairs: 158
 
 ## Score A Task
 
@@ -88,7 +88,7 @@ The selected intervention is a judge/critic trained on preference pairs:
 python training_data\format_preference_pairs.py
 ```
 
-Upload or open `training/train_simpo_colab.ipynb` in Colab with a T4 runtime. The adapter should be published as a LoRA artifact only.
+Upload or open `training/train_orpo_colab.ipynb` in Colab with a T4 runtime. The adapter should be published as a LoRA artifact only.
 
 ## License
 

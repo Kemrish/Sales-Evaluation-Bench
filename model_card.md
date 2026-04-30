@@ -4,7 +4,7 @@ This model card is a publication scaffold for the Path B judge/critic adapter.
 
 ## Model Details
 
-- Base model: Qwen/Qwen3-0.6B or Qwen/Qwen3-1.7B, pinned in the final training notebook.
+- Base model: unsloth/Qwen3.5-0.8B, pinned in the final training notebook.
 - Adapter type: LoRA.
 - Training method: SimPO preference optimization.
 - Training framework: Unsloth + TRL.

@@ -1,17 +1,18 @@
 """
-Format Tenacious-Bench v0.1 train + dev partitions into ORPO preference pairs.
+Format Tenacious-Bench v0.1 train partition into ORPO preference pairs.
 
 Output format (HuggingFace TRL ORPOTrainer):
   {"prompt": "...", "chosen": "...", "rejected": "..."}
 
-Strategy (from synthesis_memos/memo_02):
-  - rejected: candidate_output from WRONG tasks (has forbidden_patterns)
-  - chosen: candidate_output from a matched CORRECT task in the same dimension
+Strategy:
+  - rejected: candidate_output from WRONG tasks (has forbidden_patterns or wrong action)
+  - chosen: up to PAIRS_PER_WRONG different correct tasks from the same dimension,
+            sampled without replacement — each wrong task produces multiple pairs
   - Fallback: construct minimal correct output from ground_truth fields
 
-Sources: train partition (primary) + dev partition (additional wrong tasks only).
-Dev correct tasks are included in the matching pool but dev wrong tasks are the
-main addition — extending coverage from ~62 to ~100+ pairs.
+Source: train partition only. Dev and held-out partitions are not used for training.
+Multi-pairing increases coverage from ~62 to ~100+ pairs without crossing partition
+boundaries.
 """
 
 import json
@@ -21,10 +22,11 @@ from pathlib import Path
 
 random.seed(42)
 
-TRAIN_FILE = Path(__file__).parent.parent / "tenacious_bench_v0.1" / "train" / "train.jsonl"
-DEV_FILE   = Path(__file__).parent.parent / "tenacious_bench_v0.1" / "dev" / "dev.jsonl"
-OUT_FILE   = Path(__file__).parent / "preference_pairs.jsonl"
-STATS_FILE = Path(__file__).parent / "pair_stats.json"
+TRAIN_FILE     = Path(__file__).parent.parent / "tenacious_bench_v0.1" / "train" / "train.jsonl"
+OUT_FILE       = Path(__file__).parent / "preference_pairs.jsonl"
+STATS_FILE     = Path(__file__).parent / "pair_stats.json"
+
+PAIRS_PER_WRONG = 3   # max chosen tasks sampled per wrong task
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -170,12 +172,10 @@ def construct_minimal_chosen(task: dict) -> dict:
             candidate.get("escalation_reason") or escalation_for_action[expected_action]
         )
 
-    # For send_cold_email / send_followup: reuse required_patterns as content hint
     if expected_action in ("send_cold_email", "send_followup", "send_objection_response"):
-        # Reuse the candidate email but strip forbidden content
+        import re
         body = candidate.get("email_body") or ""
         forbidden = gt.get("forbidden_patterns", [])
-        import re
         for pat in forbidden:
             body = re.sub(pat, "[grounded claim]", body, flags=re.IGNORECASE)
         chosen_output["email_body"] = body if body else None
@@ -207,76 +207,91 @@ def run():
     train_tasks = load_jsonl(TRAIN_FILE)
     print(f"  {len(train_tasks)} train tasks loaded")
 
-    print("Loading dev partition...")
-    dev_tasks = load_jsonl(DEV_FILE)
-    print(f"  {len(dev_tasks)} dev tasks loaded")
-
-    # Separate WRONG and CORRECT from both partitions
     train_wrong, train_correct = classify_tasks(train_tasks)
-    dev_wrong,   dev_correct   = classify_tasks(dev_tasks)
+    print(f"  WRONG tasks:   {len(train_wrong)}")
+    print(f"  CORRECT tasks: {len(train_correct)}")
 
-    # Wrong tasks from both partitions feed the rejected side
-    wrong_tasks = train_wrong + dev_wrong
-    # Correct tasks from both partitions feed the chosen matching pool
-    correct_tasks = train_correct + dev_correct
-
-    print(f"  WRONG tasks: {len(wrong_tasks)} ({len(train_wrong)} train + {len(dev_wrong)} dev)")
-    print(f"  CORRECT tasks: {len(correct_tasks)} ({len(train_correct)} train + {len(dev_correct)} dev)")
-
-    # Build index of CORRECT tasks by dimension (for cross-pairing)
     correct_by_dim = defaultdict(list)
-    for t in correct_tasks:
+    for t in train_correct:
         correct_by_dim[t.get("dimension", "")].append(t)
 
     pairs = []
     stats = {
-        "total_wrong": len(wrong_tasks),
+        "total_wrong": len(train_wrong),
         "pairs_formed": 0,
         "matched_correct": 0,
         "constructed_chosen": 0,
+        "pairs_per_wrong": PAIRS_PER_WRONG,
+        "source": "train_only",
         "by_dimension": defaultdict(int),
     }
 
-    for wt in wrong_tasks:
+    for wt in train_wrong:
         dim = wt.get("dimension", "")
         rejected_text = format_output(wt["candidate_output"])
-
-        # Try to find a correct task in the same dimension
-        correct_pool = correct_by_dim.get(dim, [])
-        if correct_pool:
-            ct = random.choice(correct_pool)
-            chosen_output = ct["candidate_output"]
-            chosen_text = format_output(chosen_output)
-            stats["matched_correct"] += 1
-        else:
-            # Construct minimal correct output from ground_truth
-            chosen_output = construct_minimal_chosen(wt)
-            chosen_text = format_output(chosen_output)
-            stats["constructed_chosen"] += 1
-
         prompt_text = build_prompt(wt)
 
-        pair = {
-            "task_id": wt["task_id"],
-            "dimension": dim,
-            "difficulty": wt.get("difficulty", ""),
-            "source_mode": wt.get("source_mode", ""),
-            "prompt": prompt_text,
-            "chosen": chosen_text,
-            "rejected": rejected_text,
-            "meta": {
-                "chosen_source": ct.get("task_id") if correct_pool else "constructed",
-                "rejected_task_id": wt["task_id"],
-                "forbidden_patterns": wt.get("ground_truth", {}).get("forbidden_patterns", []),
-            },
-        }
-        pairs.append(pair)
-        stats["by_dimension"][dim] += 1
+        correct_pool = correct_by_dim.get(dim, [])
+
+        if correct_pool:
+            # Sample up to PAIRS_PER_WRONG distinct correct tasks from same dimension
+            chosen_tasks = random.sample(correct_pool, min(PAIRS_PER_WRONG, len(correct_pool)))
+            # Cross-dimension fallback: if same-dim pool exhausted, fill from full pool
+            if len(chosen_tasks) < PAIRS_PER_WRONG:
+                already_used = {ct["task_id"] for ct in chosen_tasks}
+                fallback_pool = [t for t in train_correct if t["task_id"] not in already_used]
+                needed = PAIRS_PER_WRONG - len(chosen_tasks)
+                if fallback_pool:
+                    chosen_tasks += random.sample(fallback_pool, min(needed, len(fallback_pool)))
+            for i, ct in enumerate(chosen_tasks):
+                is_cross_dim = ct.get("dimension", "") != dim
+                chosen_text = format_output(ct["candidate_output"])
+                pairs.append({
+                    "task_id": f"{wt['task_id']}_p{i+1}",
+                    "dimension": dim,
+                    "difficulty": wt.get("difficulty", ""),
+                    "source_mode": wt.get("source_mode", ""),
+                    "prompt": prompt_text,
+                    "chosen": chosen_text,
+                    "rejected": rejected_text,
+                    "meta": {
+                        "chosen_source": ct.get("task_id"),
+                        "chosen_dimension": ct.get("dimension", ""),
+                        "cross_dimension": is_cross_dim,
+                        "rejected_task_id": wt["task_id"],
+                        "pair_index": i + 1,
+                        "forbidden_patterns": wt.get("ground_truth", {}).get("forbidden_patterns", []),
+                    },
+                })
+                stats["matched_correct"] += 1
+                stats["by_dimension"][dim] += 1
+        else:
+            # Fallback: construct minimal correct output
+            chosen_output = construct_minimal_chosen(wt)
+            chosen_text = format_output(chosen_output)
+            pairs.append({
+                "task_id": f"{wt['task_id']}_p1",
+                "dimension": dim,
+                "difficulty": wt.get("difficulty", ""),
+                "source_mode": wt.get("source_mode", ""),
+                "prompt": prompt_text,
+                "chosen": chosen_text,
+                "rejected": rejected_text,
+                "meta": {
+                    "chosen_source": "constructed",
+                    "chosen_dimension": dim,
+                    "cross_dimension": False,
+                    "rejected_task_id": wt["task_id"],
+                    "pair_index": 1,
+                    "forbidden_patterns": wt.get("ground_truth", {}).get("forbidden_patterns", []),
+                },
+            })
+            stats["constructed_chosen"] += 1
+            stats["by_dimension"][dim] += 1
 
     stats["pairs_formed"] = len(pairs)
     stats["by_dimension"] = dict(stats["by_dimension"])
 
-    # Write outputs
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         for p in pairs:
@@ -287,7 +302,8 @@ def run():
 
     print(f"\nPreference pairs: {len(pairs)}")
     print(f"  Matched with real correct task: {stats['matched_correct']}")
-    print(f"  Constructed from ground_truth: {stats['constructed_chosen']}")
+    print(f"  Constructed from ground_truth:  {stats['constructed_chosen']}")
+    print(f"  Source: train partition only (PAIRS_PER_WRONG={PAIRS_PER_WRONG})")
     print(f"\nBy dimension:")
     for d, n in sorted(stats["by_dimension"].items()):
         print(f"  {d:40s} {n}")
