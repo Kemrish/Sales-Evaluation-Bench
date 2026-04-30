@@ -1,14 +1,14 @@
 {
-  "total_wrong": 62,
-  "pairs_formed": 62,
-  "matched_correct": 48,
-  "constructed_chosen": 14,
+  "total_wrong": 101,
+  "pairs_formed": 101,
+  "matched_correct": 78,
+  "constructed_chosen": 23,
   "by_dimension": {
-    "signal_grounding": 23,
-    "dual_control_decision": 11,
-    "bench_capacity_honesty": 14,
-    "tone_adherence": 9,
-    "signal_reliability": 3,
-    "icp_segment_classification": 2
+    "signal_grounding": 35,
+    "dual_control_decision": 20,
+    "bench_capacity_honesty": 23,
+    "tone_adherence": 13,
+    "signal_reliability": 6,
+    "icp_segment_classification": 4
   }
 }

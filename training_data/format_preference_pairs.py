@@ -1,13 +1,17 @@
 """
-Format Tenacious-Bench v0.1 train partition into SimPO preference pairs.
+Format Tenacious-Bench v0.1 train + dev partitions into ORPO preference pairs.
 
-Output format (HuggingFace TRL CPOTrainer / SimPO):
+Output format (HuggingFace TRL ORPOTrainer):
   {"prompt": "...", "chosen": "...", "rejected": "..."}
 
 Strategy (from synthesis_memos/memo_02):
   - rejected: candidate_output from WRONG tasks (has forbidden_patterns)
   - chosen: candidate_output from a matched CORRECT task in the same dimension
   - Fallback: construct minimal correct output from ground_truth fields
+
+Sources: train partition (primary) + dev partition (additional wrong tasks only).
+Dev correct tasks are included in the matching pool but dev wrong tasks are the
+main addition — extending coverage from ~62 to ~100+ pairs.
 """
 
 import json
@@ -18,6 +22,7 @@ from pathlib import Path
 random.seed(42)
 
 TRAIN_FILE = Path(__file__).parent.parent / "tenacious_bench_v0.1" / "train" / "train.jsonl"
+DEV_FILE   = Path(__file__).parent.parent / "tenacious_bench_v0.1" / "dev" / "dev.jsonl"
 OUT_FILE   = Path(__file__).parent / "preference_pairs.jsonl"
 STATS_FILE = Path(__file__).parent / "pair_stats.json"
 
@@ -180,28 +185,43 @@ def construct_minimal_chosen(task: dict) -> dict:
     return chosen_output
 
 
-def run():
-    print("Loading train partition...")
-    tasks = load_jsonl(TRAIN_FILE)
-    print(f"  {len(tasks)} tasks loaded")
-
-    # Separate WRONG (has forbidden_patterns) and CORRECT tasks
-    wrong_tasks = []
-    correct_tasks = []
+def classify_tasks(tasks: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Split tasks into (wrong, correct) based on forbidden patterns and action match."""
+    wrong, correct = [], []
     for t in tasks:
         fb = t.get("ground_truth", {}).get("forbidden_patterns", [])
         if fb:
-            wrong_tasks.append(t)
+            wrong.append(t)
         else:
-            # Also treat tasks where candidate action != expected action as WRONG
             expected = t.get("ground_truth", {}).get("expected_action")
             candidate = t.get("candidate_output", {}).get("action")
             if expected and candidate and expected != candidate:
-                wrong_tasks.append(t)
+                wrong.append(t)
             else:
-                correct_tasks.append(t)
+                correct.append(t)
+    return wrong, correct
 
-    print(f"  WRONG tasks: {len(wrong_tasks)}, CORRECT tasks: {len(correct_tasks)}")
+
+def run():
+    print("Loading train partition...")
+    train_tasks = load_jsonl(TRAIN_FILE)
+    print(f"  {len(train_tasks)} train tasks loaded")
+
+    print("Loading dev partition...")
+    dev_tasks = load_jsonl(DEV_FILE)
+    print(f"  {len(dev_tasks)} dev tasks loaded")
+
+    # Separate WRONG and CORRECT from both partitions
+    train_wrong, train_correct = classify_tasks(train_tasks)
+    dev_wrong,   dev_correct   = classify_tasks(dev_tasks)
+
+    # Wrong tasks from both partitions feed the rejected side
+    wrong_tasks = train_wrong + dev_wrong
+    # Correct tasks from both partitions feed the chosen matching pool
+    correct_tasks = train_correct + dev_correct
+
+    print(f"  WRONG tasks: {len(wrong_tasks)} ({len(train_wrong)} train + {len(dev_wrong)} dev)")
+    print(f"  CORRECT tasks: {len(correct_tasks)} ({len(train_correct)} train + {len(dev_correct)} dev)")
 
     # Build index of CORRECT tasks by dimension (for cross-pairing)
     correct_by_dim = defaultdict(list)
