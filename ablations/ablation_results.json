@@ -48,9 +48,24 @@
     "significant": false
   },
   "delta_b": {
+    "description": "Trained adapter avg score vs. prompt-engineered base model (same backbone, no training) on held-out.",
     "lift_pts": 22.18,
+    "ci_95_pts": [14.43, 29.82],
     "p_value": 0.0,
     "significant": true
+  },
+  "delta_c": {
+    "description": "Trained adapter binary pass rate vs. Week 10 baseline binary pass rate on held-out (tasks scoring >= threshold 0.7).",
+    "baseline_pass_rate": 0.6216,
+    "trained_pass_rate": 0.6216,
+    "baseline_n_pass": 23,
+    "trained_n_pass": 23,
+    "n_total": 37,
+    "lift_pts": 0.0,
+    "ci_95_pts": [-24.32, 24.32],
+    "p_value": 0.5495,
+    "significant": false,
+    "notes": "Binary pass-rate parity: trained adapter passes 23/37 tasks, same count as Week 10 baseline. Average weighted score differs (72.25% vs 74.59%) but threshold-crossing rate is unchanged at ~200 training steps. Expected to improve at full 750-step convergence."
   },
   "cost_pareto": {
     "avg_latency_ms_with_adapter": 19712.3,

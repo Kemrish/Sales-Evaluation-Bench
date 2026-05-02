@@ -95,11 +95,19 @@
     },
     {
       "claim_id": "delta_b_lift",
-      "claim": "Delta B: ORPO-trained adapter vs prompt-engineered base model on held-out = +22.18 percentage points (highly significant, p=0.0).",
+      "claim": "Delta B: ORPO-trained adapter vs prompt-engineered base model on held-out = +22.18 percentage points (highly significant, p=0.0, 95% CI [+14.43, +29.82]).",
       "value": 22.18,
       "source": "ablations/ablation_results.json",
       "artifacts": ["ablations/ablation_results.json"],
-      "notes": "p-value=0.0. Training instilled Tenacious policy knowledge far beyond what prompting alone achieves."
+      "notes": "p-value=0.0, 95% CI [+14.43, +29.82]. Entire CI is positive — training benefit is unambiguous. Training instilled Tenacious policy knowledge far beyond what prompting alone achieves."
+    },
+    {
+      "claim_id": "delta_c_lift",
+      "claim": "Delta C: Trained adapter binary pass rate vs Week 10 baseline binary pass rate = 0.00 pts (both 23/37, 62.16%). Not significant.",
+      "value": 0.0,
+      "source": "ablations/ablation_results.json",
+      "artifacts": ["ablations/ablation_results.json", "ablations/held_out_traces.jsonl"],
+      "notes": "p-value=0.5495, 95% CI [-24.32, +24.32]. Both conditions pass 23/37 held-out tasks at threshold 0.70. Average weighted scores differ (72.25% vs 74.59%) but threshold-crossing rate is unchanged at ~200 training steps."
     },
     {
       "claim_id": "signal_grounding_improvement",

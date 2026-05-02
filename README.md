@@ -9,7 +9,7 @@ Tenacious-Bench is a small, machine-scored benchmark for Tenacious-style B2B sal
 | Dataset (train + dev, CC-BY-4.0) | https://huggingface.co/datasets/MajorKemeriya/tenacious-bench-v0-1 |
 | Blog post | https://substack.com/profile/176991119-kemeriya-major/note/c-252497550 |
 | Community issue (τ²-Bench) | https://github.com/sierra-research/tau2-bench/issues/282 |
-| LoRA adapter | pending full 750-step run |
+| LoRA adapter (HuggingFace model) | pending — upload after full 750-step run; adapter trained at ~200 steps on Colab T4 |
 
 ## Status
 

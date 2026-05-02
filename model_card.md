@@ -62,7 +62,11 @@ All results are on the sealed held-out partition (37 tasks). Training used 158 O
 | Delta A 95% CI | [−11.09, +6.20] pts |
 | Delta A p-value | 0.7095 (not significant) |
 | Delta B: trained vs prompt-engineered | **+22.18 pts** |
+| Delta B 95% CI | **[+14.43, +29.82] pts** |
 | Delta B p-value | **0.0 (highly significant)** |
+| Delta C: trained vs baseline pass rate (binary) | 0.00 pts (both 23/37 = 62.16%) |
+| Delta C 95% CI | [−24.32, +24.32] pts |
+| Delta C p-value | 0.5495 (not significant) |
 | Avg latency per task (with adapter) | 19,712 ms |
 
 ### Per-Dimension Results (held-out)

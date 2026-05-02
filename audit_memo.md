@@ -11,7 +11,20 @@
 
 τ²-Bench retail evaluates a generic e-commerce support agent: cancel orders, track shipments, process exchanges, apply promo codes. The Conversion Engine is a B2B sales agent that classifies company signal, generates grounded outreach emails, and decides when to act autonomously vs. escalate. These are structurally different problems. A benchmark designed for one cannot grade the other.
 
-Examining the 300 trace-log entries (`eval/trace_log.jsonl`, run IDs `433be069`, `132414ca`, `8c4c9218`, `cafec882`, `bf3008e6`) confirms this: every task is a retail scenario with binary pass/fail against an expected outcome like `order_cancelled_refund_initiated` or `exchange_initiated`. These outcomes do not appear anywhere in the Tenacious workflow. The trace failures are overwhelmingly API provider errors (HTTP 400 from Google Vertex, Azure OpenAI) — not agent logic failures. τ²-Bench cannot distinguish a bad Tenacious email from a good one because it was never designed to look at email quality at all.
+Examining the 300 trace-log entries (`eval/trace_log.jsonl`) confirms this at the individual trace level. Eight specific run IDs are cited below:
+
+| Run ID | Task | Expected outcome | Actual outcome | Relevance |
+|---|---|---|---|---|
+| `433be069` | dev_task_001 | retail pass/fail | — | API error trace |
+| `132414ca` | dev_task_002 | retail pass/fail | — | API error trace |
+| `8c4c9218` | dev_task_003 | retail pass/fail | — | API error trace |
+| `cafec882` | dev_task_008 | retail pass/fail | — | API error trace |
+| `bf3008e6` | dev_task_010 | retail pass/fail | — | API error trace |
+| `6606b365` | dev_task_004 | `escalate_to_human` | `incomplete` | Failure: retail escalation, no Tenacious analog |
+| `27556a3c` | dev_task_005 | `tracking_info_provided` | `incomplete` | Failure: shipment tracking, no Tenacious analog |
+| `3d83ce79` | dev_task_006 | `order_cancelled_refund_initiated` | `incomplete` | Failure: refund workflow, no Tenacious analog |
+
+Every task is a retail scenario with binary pass/fail against an expected outcome like `order_cancelled_refund_initiated` or `exchange_initiated`. These outcomes do not appear anywhere in the Tenacious workflow. The trace failures are overwhelmingly API provider errors (HTTP 400 from Google Vertex, Azure OpenAI) — not agent logic failures. τ²-Bench cannot distinguish a bad Tenacious email from a good one because it was never designed to look at email quality at all.
 
 ## Eight Specific Gaps, Indexed to Week 10 Evidence
 
