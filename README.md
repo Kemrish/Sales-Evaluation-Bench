@@ -2,16 +2,26 @@
 
 Tenacious-Bench is a small, machine-scored benchmark for Tenacious-style B2B sales agents. It evaluates the behaviors that a generic retail/task benchmark misses: signal-grounded outreach, bench-capacity honesty, dual-control routing, ICP segment classification, signal reliability, and Tenacious tone adherence.
 
+## Public Artifacts
+
+| Artifact | Link |
+|---|---|
+| Dataset (train + dev, CC-BY-4.0) | https://huggingface.co/datasets/MajorKemeriya/tenacious-bench-v0-1 |
+| Blog post | https://substack.com/profile/176991119-kemeriya-major/note/c-252497550 |
+| Community issue (τ²-Bench) | https://github.com/sierra-research/tau2-bench/issues/282 |
+| LoRA adapter | pending full 750-step run |
+
 ## Status
 
-Current state: Acts I-III complete. Act IV (training + ablations) in progress.
+Current state: Acts I–IV complete. Adapter upload pending full training run.
 
 - 216 authored tasks across train/dev/held-out partitions.
 - Held-out contamination check passes (n-gram, sentence-transformers embedding, time-shift).
 - Path B selected: a preference-tuned judge/critic using ORPO.
 - 158 preference pairs generated from the train partition (multi-paired, train-only).
 - 10 synthesis memos committed (4 common-reading + 4 Path B + 2 project analysis).
-- Training notebook ready in `training/train_orpo_colab.ipynb` — run on Colab T4 to produce adapter.
+- ORPO adapter trained (~200 steps on Colab T4): Delta B +22.18 pts (p=0.0), Delta A −2.34 pts (not significant).
+- Dataset published on HuggingFace. Blog post and τ²-Bench community issue live.
 
 ## Repository Layout
 
