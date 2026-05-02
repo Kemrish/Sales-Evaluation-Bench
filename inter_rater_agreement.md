@@ -112,6 +112,36 @@ These cases are addressed in v0.2 by adding explicit threshold tables to the tas
 
 ---
 
+## Rubric Revision Protocol
+
+### Trigger conditions
+
+A rubric revision is **mandatory** if any of the following are observed in a future labeling round:
+
+| Trigger | Action required |
+|---------|----------------|
+| Per-dimension κ < 0.80 on any single dimension | Revise that dimension's rubric; re-label the disagreeing tasks; re-compute κ before proceeding |
+| Overall κ < 0.80 across the 30-task sample | Suspend new task authoring; convene rubric review; document every change in the revision log below |
+| Any single task disagreed on by both sessions | Add an explicit decision note to that task's `ground_truth.notes`; re-label |
+| A second annotator added and pairwise agreement < 0.80 | Same as per-dimension κ < 0.80 |
+
+### Revision process (step-by-step)
+
+1. **Identify** all tasks where sessions disagreed. Record task IDs and the specific sub-label that differed (Action / Grounding / Overall).
+2. **Root-cause** the disagreement: ambiguous forbidden_pattern, implicit threshold, or underspecified action taxonomy.
+3. **Update the rubric**: edit the relevant `ground_truth.forbidden_patterns`, `ground_truth.required_patterns`, or the task's `description` to eliminate the ambiguity.
+4. **Re-label** only the affected tasks in a new session (≥ 24 h after the revision).
+5. **Re-compute** κ for the affected dimension.
+6. **Log the revision** in the table below.
+
+### Revision log
+
+| Date | Dimension | Tasks affected | κ before | κ after | Change made |
+|------|-----------|---------------|----------|---------|-------------|
+| — | — | — | — | — | No revisions triggered (κ = 1.00 in initial round) |
+
+---
+
 ## Rubric Calibration Notes
 
 During the labeling sessions, two rubric edge cases were identified and recorded:

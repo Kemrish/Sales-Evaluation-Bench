@@ -1,0 +1,25 @@
+{
+  "description": "Judge filter execution summary — Tenacious-Bench v0.1 synthesis run",
+  "evidence_file": "generation_scripts/judge_rotation_log.jsonl",
+  "run_date": "2026-04-28",
+  "generator_model": "qwen/qwen3-235b-a22b",
+  "judge_model": "anthropic/claude-sonnet-4-6",
+  "accept_threshold": 3.5,
+  "dimensions_scored": ["coherence", "verifiability", "clarity"],
+  "total_judge_calls": 37,
+  "accepted": 7,
+  "rejected": 30,
+  "rejection_rate": "81%",
+  "rejection_reasons": {
+    "verifiability_below_threshold": 30,
+    "clarity_below_threshold": 28,
+    "coherence_below_threshold": 6,
+    "note": "Most rejections failed verifiability — LLM-generated tasks frequently produced rubrics that could not be applied mechanically (regex/exact-match), which was the dominant quality failure."
+  },
+  "avg_scores_all_tasks": {
+    "coherence": 3.81,
+    "verifiability": 2.38,
+    "clarity": 3.0
+  },
+  "implementation": "generation_scripts/generate_synthesis.py::judge_task() + generation_scripts/judge_filter.py"
+}

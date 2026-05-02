@@ -41,6 +41,9 @@ Current state: Acts I–IV complete. Adapter upload pending full training run.
   - `generate_trace_derived.py` — deterministic probe-to-task conversion; no LLM calls.
   - `generate_sg_extra.py` — deterministic SG extras (`random.seed(99)`); no LLM calls.
   - `generate_synthesis.py` — multi-LLM synthesis with judge rotation (requires `OPENROUTER_API_KEY`).
+  - `judge_filter.py` — **standalone LLM-as-judge filter pipeline**: pointwise scoring (coherence/verifiability/clarity, threshold 3.5), pairwise near-duplicate resolution, JSONL logging. Run independently or imported by `generate_synthesis.py`.
+  - `judge_rotation_log.jsonl` — **execution evidence from the actual synthesis run**: 37 judge decisions (7 accepted, 30 rejected) logged by `generate_synthesis.py` during dataset authoring. Each entry records task ID, generator model, judge model, per-dimension scores, and accept/reject decision.
+  - `judge_filter_summary.json` — human-readable summary of the judge filter run: acceptance rate, per-dimension average scores, dominant rejection reason (verifiability failures = 30/30 rejections).
   - `partition.py` — contamination-aware train/dev/held-out split.
   - `contamination_check.py` — n-gram, embedding-similarity, and time-shift checks.
 - `training_data/`: Path B preference-pair formatter and generated pairs.
@@ -102,4 +105,27 @@ Upload or open `training/train_orpo_colab.ipynb` in Colab with a T4 runtime. The
 
 ## License
 
-Dataset license target: CC-BY-4.0. See `datasheet.md` and `methodology.md` for rationale and use limitations.
+Dataset and all artifacts in this repository are released under **CC BY 4.0**.
+See [LICENSE](LICENSE) and `datasheet.md` for use limitations.
+
+## Attribution and Credits
+
+**Author**: Kemeriya (kemeriya@10academy.org)
+
+**External benchmarks**
+- τ²-Bench — Sierra Research. Used as the public baseline whose retail-domain gaps motivated this work. [GitHub](https://github.com/sierra-research/tau2-bench)
+
+**Libraries and frameworks**
+- [Unsloth](https://github.com/unslothai/unsloth) — efficient LoRA fine-tuning
+- [TRL](https://github.com/huggingface/trl) (HuggingFace) — ORPOTrainer
+- [sentence-transformers](https://www.sbert.net/) — contamination embedding check (`all-MiniLM-L6-v2`)
+- [httpx](https://www.python-httpx.org/) — OpenRouter API calls
+- [OpenRouter](https://openrouter.ai/) — multi-LLM routing (Qwen3-235B generator, Claude Sonnet judge)
+
+**Models**
+- Generator: `qwen/qwen3-235b-a22b` via OpenRouter
+- Judge / filter: `anthropic/claude-sonnet-4-6` via OpenRouter
+- Training backbone: `unsloth/Qwen3.5-0.8B`
+- Contamination embeddings: `sentence-transformers/all-MiniLM-L6-v2`
+
+**Coursework context**: Tenacious-Bench v0.1 was developed as Week 11 coursework for the 10 Academy AI Mastery programme.
