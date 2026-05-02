@@ -42,8 +42,8 @@
     },
     {
       "claim_id": "preference_pair_count",
-      "claim": "Path B training data contains 62 preference pairs.",
-      "value": 62,
+      "claim": "Path B training data contains 158 preference pairs (62 wrong tasks x up to 3 chosen, train-only, cross-dimension fallback).",
+      "value": 158,
       "source": "training_data/pair_stats.json",
       "artifacts": [
         "training_data/preference_pairs.jsonl",
@@ -65,41 +65,63 @@
       "artifacts": ["ablations/baseline_candidate_dev.json"]
     },
     {
-      "claim_id": "week10_baseline_held_out_pass_rate",
+      "claim_id": "week10_baseline_held_out_avg_score",
       "claim": "The Week 10 generation baseline scores 74.59% average weighted score on the held-out partition.",
       "value": 0.7459,
       "source": "ablations/ablation_results.json",
       "artifacts": ["ablations/ablation_results.json"]
     },
     {
-      "claim_id": "post_training_held_out_pass_rate",
-      "claim": "The SimPO-trained adapter scores 49.66% average weighted score on the held-out partition.",
-      "value": 0.4966,
+      "claim_id": "prompt_engineered_held_out_avg_score",
+      "claim": "The prompt-engineered base model (untrained Qwen3.5-0.8B + explicit policy prompt) scores 50.07% average weighted score on held-out.",
+      "value": 0.5007,
+      "source": "ablations/ablation_results.json",
+      "artifacts": ["ablations/ablation_results.json"]
+    },
+    {
+      "claim_id": "post_training_held_out_avg_score",
+      "claim": "The ORPO-trained adapter scores 72.25% average weighted score on the held-out partition.",
+      "value": 0.7225,
       "source": "ablations/ablation_results.json",
       "artifacts": ["ablations/ablation_results.json"]
     },
     {
       "claim_id": "delta_a_lift",
-      "claim": "Delta A: trained adapter vs Week 10 baseline on held-out = -24.92 percentage points (negative result; training degraded performance).",
-      "value": -24.92,
+      "claim": "Delta A: ORPO-trained adapter vs Week 10 baseline on held-out = -2.34 percentage points (not statistically significant).",
+      "value": -2.34,
       "source": "ablations/ablation_results.json",
       "artifacts": ["ablations/ablation_results.json"],
-      "notes": "p-value=1.0, 95% CI [-33.98, -15.60]. Not significant in positive direction. Negative result is honest and reported as-is."
+      "notes": "p-value=0.7095, 95% CI [-11.09, +6.20]. Not significant — adapter nearly matches but does not clearly surpass Week 10 baseline."
     },
     {
       "claim_id": "delta_b_lift",
-      "claim": "Delta B: trained adapter vs prompt-engineered base model on held-out = -2.56 percentage points (negative result).",
-      "value": -2.56,
+      "claim": "Delta B: ORPO-trained adapter vs prompt-engineered base model on held-out = +22.18 percentage points (highly significant, p=0.0).",
+      "value": 22.18,
       "source": "ablations/ablation_results.json",
       "artifacts": ["ablations/ablation_results.json"],
-      "notes": "p-value=0.9675. Prompt-engineered base scored 52.22%; trained adapter scored 49.66%."
+      "notes": "p-value=0.0. Training instilled Tenacious policy knowledge far beyond what prompting alone achieves."
     },
     {
-      "claim_id": "training_loss",
-      "claim": "SimPO training converged to loss 0.453 over 500 steps (125 epochs on 62 pairs).",
-      "value": 0.4531,
+      "claim_id": "signal_grounding_improvement",
+      "claim": "Signal grounding dimension improved from 0.718 to 0.836 post-training (+11.8 pts).",
+      "value": 0.1178,
       "source": "ablations/ablation_results.json",
       "artifacts": ["ablations/ablation_results.json"]
+    },
+    {
+      "claim_id": "training_config",
+      "claim": "ORPO training: Qwen3.5-0.8B, LoRA r=16 alpha=32, beta=0.2, lr=2e-5, early stopped ~200 steps, 158 pairs.",
+      "value": {
+        "backbone": "unsloth/Qwen3.5-0.8B",
+        "lora_r": 16,
+        "lora_alpha": 32,
+        "beta": 0.2,
+        "lr": 0.00002,
+        "steps": "early_stopped_200",
+        "pairs": 158
+      },
+      "source": "ablations/ablation_results.json",
+      "artifacts": ["ablations/ablation_results.json", "training/train_orpo_colab.ipynb"]
     }
   ]
 }
